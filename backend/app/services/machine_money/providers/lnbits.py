@@ -118,7 +118,7 @@ class LNbitsProvider(LightningProvider):
         payload = {
             "out": False,
             "amount": request.amount_sats,
-            "memo": request.memo or "AuRAG Machine Money Invoice",
+            "memo": request.memo or "KinetixRAG Machine Money Invoice",
             "unit": "sat",
         }
 

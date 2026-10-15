@@ -1,7 +1,7 @@
-# 🏗️ AuRAG System Architecture & Technical Specifications
+# 🏗️ KinetixRAG System Architecture & Technical Specifications
 
 > **Canonical Architectural Blueprint & Architecture Decision Records (ADR)**  
-> **System:** AuRAG (Autonomous Industrial Machine Money Protocol & GraphRAG Reasoning Engine)  
+> **System:** KinetixRAG (Autonomous Industrial Machine Money Protocol & GraphRAG Reasoning Engine)  
 > **Status:** Production-Ready & Formally Verified  
 > **Event:** Hacker House Goa (HHGoa)
 
@@ -9,9 +9,9 @@
 
 ## 1. Executive System Overview
 
-AuRAG is an autonomous cyber-physical machine money protocol designed for industrial operations (refineries, chemical processing, automated manufacturing plants). It addresses a multi-billion dollar industrial inefficiency: **unplanned asset downtime costs $22,000 per minute**, yet maintenance procurement and diagnostic dispatch historically require hours or days of human bureaucratic approval.
+KinetixRAG is an autonomous cyber-physical machine money protocol designed for industrial operations (refineries, chemical processing, automated manufacturing plants). It addresses a multi-billion dollar industrial inefficiency: **unplanned asset downtime costs $22,000 per minute**, yet maintenance procurement and diagnostic dispatch historically require hours or days of human bureaucratic approval.
 
-AuRAG transforms physical plant machinery into **sovereign economic actors** equipped with their own Bitcoin Lightning Network wallets (BOLT-11 via LNbits). An experimental NIP-47-inspired Nostr Wallet Connect simulation is included as a stretch goal. Crucially, an autonomous asset cannot make blind disbursements. AuRAG integrates a hybrid **Industrial GraphRAG Engine** as the machine's deterministic evidence & justification layer—validating physical failure modes, operating procedures (SOPs), warranty constraints, and ISO standards before releasing satoshis.
+KinetixRAG transforms physical plant machinery into **sovereign economic actors** equipped with their own Bitcoin Lightning Network wallets (BOLT-11 via LNbits). An experimental NIP-47-inspired Nostr Wallet Connect simulation is included as a stretch goal. Crucially, an autonomous asset cannot make blind disbursements. KinetixRAG integrates a hybrid **Industrial GraphRAG Engine** as the machine's deterministic evidence & justification layer—validating physical failure modes, operating procedures (SOPs), warranty constraints, and ISO standards before releasing satoshis.
 
 ```mermaid
 flowchart TD
@@ -51,7 +51,7 @@ flowchart TD
 
 ## 2. Industrial Knowledge Graph Ontology & Schema
 
-AuRAG models plant knowledge not as unstructured text embeddings, but as a strongly-typed property graph in **Neo4j** with strict uniqueness constraints and multi-hop ontological paths.
+KinetixRAG models plant knowledge not as unstructured text embeddings, but as a strongly-typed property graph in **Neo4j** with strict uniqueness constraints and multi-hop ontological paths.
 
 ### 2.1 Core Graph Node Classes
 
@@ -82,12 +82,12 @@ AuRAG models plant knowledge not as unstructured text embeddings, but as a stron
 
 ## 3. Hybrid GraphRAG Retrieval Architecture
 
-A foundational principle of AuRAG is that **no single retrieval method is sufficient** for high-stakes industrial operations:
+A foundational principle of KinetixRAG is that **no single retrieval method is sufficient** for high-stakes industrial operations:
 - Dense vector search frequently misses exact equipment tags (`P-101A` vs `P-101B`) and clause codes.
 - Keyword search (BM25) misses semantic intent and complex degradation descriptions.
 - Pure Graph Traversal requires an explicit anchor and cannot retrieve unstructured procedural text.
 
-AuRAG fuses four independent candidate paths and reranks them locally:
+KinetixRAG fuses four independent candidate paths and reranks them locally:
 
 ```mermaid
 graph LR
@@ -182,7 +182,7 @@ sequenceDiagram
 
 A major failure mode in high-stakes hackathon evaluations is dependence on 6 cloud services over conference WiFi (Neo4j AuraDB + Qdrant Cloud + Redis + Groq + Gemini + Lightning).
 
-AuRAG solves this by defaulting to an **autonomous standalone local engine**:
+KinetixRAG solves this by defaulting to an **autonomous standalone local engine**:
 - **Relational Storage:** High-performance local SQLite database (`sqlite:///:memory:` or local file).
 - **In-Memory Knowledge Graph:** Sub-millisecond Neo4j fallback session (`FallbackNeo4jSession`) executing Cypher queries against in-memory graph models when remote AuraDB is paused or offline.
 - **Empirical Telemetry Replay:** Self-contained NASA IMS dataset run-to-failure records.
@@ -225,6 +225,6 @@ AuRAG solves this by defaulting to an **autonomous standalone local engine**:
 ---
 
 <div align="center">
-  <b>AuRAG Architecture Specification — Hacker House Goa (HHGoa)</b><br/>
+  <b>KinetixRAG Architecture Specification — Hacker House Goa (HHGoa)</b><br/>
   <i>Engineered for Reliability, Truthfulness, and Sovereign Machine Money</i>
 </div>

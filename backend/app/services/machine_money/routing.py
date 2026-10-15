@@ -1,4 +1,4 @@
-"""Multi-Hop Lightning Network HTLC Onion Routing Engine for AuRAG Machine Money.
+"""Multi-Hop Lightning Network HTLC Onion Routing Engine for KinetixRAG Machine Money.
 Simulates real Bitcoin Lightning Network graph pathfinding, Sphinx onion packet wrapping,
 CLTV timelock delta staging, and reverse HTLC preimage resolution across vendor peering channels.
 """
@@ -32,7 +32,7 @@ class LightningNode:
 CANONICAL_NODES: Dict[str, LightningNode] = {
     "node_plant": LightningNode(
         pubkey="02a1b2c3d4e5f60718293a4b5c6d7e8f90123456789abcdef0123456789abcde01",
-        alias="AuRAG Plant Edge Gateway (P-101A)",
+        alias="KinetixRAG Plant Edge Gateway (P-101A)",
         color="#F7931A",
         location="Mumbai Refinery Site",
         role="EDGE_GATEWAY",
@@ -319,7 +319,7 @@ class MultiHopRouter:
                 "step": s["step"],
                 "phase": "FORWARD_HTLC" if s["direction"] == "FORWARD" else "BACKWARD_SETTLE",
                 "from": s.get("from") or s.get("node", ""),
-                "to": s.get("to") or "ORIGIN (AuRAG Plant)",
+                "to": s.get("to") or "ORIGIN (KinetixRAG Plant)",
                 "action": s["action"],
                 "cltv_expiry": s.get("cltv_expiry", 0),
                 "amount_sats": s.get("locked_sats") or s.get("total_settled_sats") or s.get("earned_fee_sats") or amount_sats,

@@ -1,6 +1,6 @@
-# AuRAG Enterprise STRIDE Threat Model & Security Review
+# KinetixRAG Enterprise STRIDE Threat Model & Security Review
 
-This document establishes the threat model and defense-in-depth security architecture for **AuRAG**, following the Microsoft STRIDE methodology.
+This document establishes the threat model and defense-in-depth security architecture for **KinetixRAG**, following the Microsoft STRIDE methodology.
 
 ---
 
@@ -26,4 +26,4 @@ This document establishes the threat model and defense-in-depth security archite
 
 > [!CAUTION]
 > **Direct Industrial-Control Prohibition**:
-> AuRAG is permanently restricted to enterprise-tier workflow systems (SAP PM work-order drafts, QMS non-conformance records, and operator notifications). Direct control system writes (DCS, PLC, SCADA) are physically and logically segregated by unidirectional data diodes and firewall rules.
+> KinetixRAG is permanently restricted to enterprise-tier workflow systems (SAP PM work-order drafts, QMS non-conformance records, and operator notifications). Direct control system writes (DCS, PLC, SCADA) are physically and logically segregated by unidirectional data diodes and firewall rules.

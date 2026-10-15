@@ -1,5 +1,5 @@
 output "alb_dns_name" {
-  description = "Public Application Load Balancer DNS name for AuRAG console"
+  description = "Public Application Load Balancer DNS name for KinetixRAG console"
   value       = aws_lb.main.dns_name
 }
 

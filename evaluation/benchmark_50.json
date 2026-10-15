@@ -1,5 +1,5 @@
 {
-  "description": "AuRAG Golden Industrial Evaluation Benchmark Suite (52 Real-World Scenarios)",
+  "description": "KinetixRAG Golden Industrial Evaluation Benchmark Suite (52 Real-World Scenarios)",
   "total_cases": 52,
   "cases": [
     {

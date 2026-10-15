@@ -1,4 +1,4 @@
-# PRD: AuRAG — Autonomous Industrial Intelligence & Machine Money
+# PRD: KinetixRAG — Autonomous Industrial Intelligence & Machine Money
 
 **Hacker House Goa (HHGoa) — Autonomous Machine Money Subsystem**
 

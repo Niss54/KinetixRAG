@@ -1,7 +1,7 @@
-# PRD — AuRAG Final Hackathon Hardening & Submission Plan
+# PRD — KinetixRAG Final Hackathon Hardening & Submission Plan
 **Master Phased Execution Document**
 
-- **Project:** AuRAG — Autonomous Industrial Intelligence + Machine Money
+- **Project:** KinetixRAG — Autonomous Industrial Intelligence + Machine Money
 - **Track:** Machine Money (Hacker House Goa — HHGoa)
 - **Target:** 100% Truthful, Judge-Defensible, Production-Structured Submission
 - **Execution Style:** Phase-gated, test-driven, MCP browser-verified, commit-after-green
@@ -211,7 +211,7 @@ PHASE 8: README FINAL REWRITE & TRUTHFUL FAQ [STATUS: READY TO EXECUTE]
 ================================================================================
 ```
 - **Command:** `phase 8 start kro`
-- **Goal:** Polish `README.md` to deliver an immediate 30-second grasp of AuRAG, link to test snapshots, and provide truthful FAQs.
+- **Goal:** Polish `README.md` to deliver an immediate 30-second grasp of KinetixRAG, link to test snapshots, and provide truthful FAQs.
 - **Target Files:**
   - `README.md`:
     - Top: 30-second value thesis + Machine Money feedback loop diagram.
@@ -281,8 +281,8 @@ PHASE 12: FINAL RELEASE GATE & SUBMISSION PACKAGE [STATUS: READY TO EXECUTE]
 
 | Time | Stage | Action on Screen | Voiceover Cue |
 | :---: | :--- | :--- | :--- |
-| **0:00 - 0:15** | **The Problem** | Show P-101A telemetry card with vibration spiking to `5.4 mm/s` (threshold `4.5 mm/s`). | *"In heavy industry, a machine can detect its own failure hours in advance, but remains trapped waiting for human purchase orders. AuRAG gives machines governed financial agency."* |
-| **0:15 - 0:35** | **Grounding & Evidence** | Click `RUN INDUSTRIAL EMERGENCY`. Timeline advances through Anomaly Detected -> Evidence Matched -> Failure Diagnosed. | *"AuRAG does not spend money from a raw sensor spike. It queries GraphRAG to ground the event in historical failure signatures (FE-001) and operating procedures (PROC-001)."* |
+| **0:00 - 0:15** | **The Problem** | Show P-101A telemetry card with vibration spiking to `5.4 mm/s` (threshold `4.5 mm/s`). | *"In heavy industry, a machine can detect its own failure hours in advance, but remains trapped waiting for human purchase orders. KinetixRAG gives machines governed financial agency."* |
+| **0:15 - 0:35** | **Grounding & Evidence** | Click `RUN INDUSTRIAL EMERGENCY`. Timeline advances through Anomaly Detected -> Evidence Matched -> Failure Diagnosed. | *"KinetixRAG does not spend money from a raw sensor spike. It queries GraphRAG to ground the event in historical failure signatures (FE-001) and operating procedures (PROC-001)."* |
 | **0:35 - 0:50** | **RFQ & Vendor Selection** | Timeline shows 3-vendor RFQ. Apex Diagnostics selected (250 sats, 15 min SLA). | *"A 3-node RFQ compares pre-approved industrial vendors using a balanced score of cost, latency, and reliability."* |
 | **0:50 - 1:10** | **Policy Gate & Settlement** | Timeline shows Policy PASS (< 500 sats cap). Valid BOLT11 invoice generated with QR code, then transitions to SETTLED. | *"The spending policy enforces a strict 500-sat autonomous cap. Because 250 sats is within policy, the Lightning micro-payment settles autonomously."* |
 | **1:10 - 1:30** | **Proof & Causal Lineage** | Click `Inspect Cryptographic Proof`. Open Proof Drawer. Navigate across Why We Paid, RFQ Decision, and Graph Lineage. | *"This is not just a payment—it is a verifiable causal chain. The payment hash is cryptographically bound to the work order, failure event, and Neo4j graph."* |

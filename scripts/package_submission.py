@@ -1,6 +1,6 @@
-"""AuRAG Clean Submission Packager.
+"""KinetixRAG Clean Submission Packager.
 
-Packages the AuRAG repository into a production/hackathon submission ZIP artifact,
+Packages the KinetixRAG repository into a production/hackathon submission ZIP artifact,
 guaranteeing complete exclusion of:
 - __pycache__ / *.pyc / *.pyo / *.pyd bytecode
 - .pytest_cache and runtime temp files
@@ -134,13 +134,13 @@ def build_submission_zip(output_zip: Path, repo_root: Path = REPO_ROOT) -> int:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Package AuRAG into a clean submission ZIP.")
+    parser = argparse.ArgumentParser(description="Package KinetixRAG into a clean submission ZIP.")
     parser.add_argument(
         "--output",
         "-o",
         type=Path,
-        default=REPO_ROOT / "AuRAG-Submission.zip",
-        help="Target ZIP path (default: AuRAG-Submission.zip)",
+        default=REPO_ROOT / "KinetixRAG-Submission.zip",
+        help="Target ZIP path (default: KinetixRAG-Submission.zip)",
     )
     args = parser.parse_args()
     ret = build_submission_zip(args.output.resolve())

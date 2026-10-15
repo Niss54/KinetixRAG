@@ -67,7 +67,7 @@ def test_memory_write_carries_session_and_expiration_metadata():
     call = client.add_calls[0]
     assert call["user_id"] == "user-1"
     assert call["run_id"] == "session-9"
-    assert call["metadata"]["source"] == "aurag_chat"
+    assert call["metadata"]["source"] == "kinetix_chat"
     assert call["metadata"]["expires_at"] == "2026-11-01T00:00:00+00:00"
 
 

@@ -66,7 +66,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
       <SidebarInset className="h-svh min-w-0 overflow-hidden">
         <DashboardHeader title={getWorkspaceTitle(pathname)} readiness={readiness} />
         <ScrollArea className="min-h-0 flex-1">
-          <div className="aurag-grid min-h-full">{children}</div>
+          <div className="kinetix-grid min-h-full">{children}</div>
         </ScrollArea>
       </SidebarInset>
     </SidebarProvider>

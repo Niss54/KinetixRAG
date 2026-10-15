@@ -1,4 +1,4 @@
-"""Automated Backup & Restore Utility for AuRAG Enterprise State.
+"""Automated Backup & Restore Utility for KinetixRAG Enterprise State.
 
 Exports relational audit ledger, automation policies, approval records,
 and connector metadata to verifiable JSON snapshot bundles with SHA256 checksums.
@@ -55,7 +55,7 @@ def create_backup(db_url: str, output_dir: Path, site_id: str = "plant-mumbai-01
     session = Session()
 
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    bundle_name = f"aurag_backup_{site_id}_{timestamp}"
+    bundle_name = f"kinetix_backup_{site_id}_{timestamp}"
     bundle_dir = output_dir / bundle_name
     bundle_dir.mkdir(parents=True, exist_ok=True)
 
@@ -203,7 +203,7 @@ def restore_backup(bundle_dir: Path, target_db_url: str) -> dict:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="AuRAG Backup & Restore Manager")
+    parser = argparse.ArgumentParser(description="KinetixRAG Backup & Restore Manager")
     parser.add_argument("--action", choices=["backup", "verify", "restore"], default="backup")
     parser.add_argument("--output-dir", type=str, default="data/backups")
     parser.add_argument("--bundle-dir", type=str, help="Directory of backup bundle for verify or restore")

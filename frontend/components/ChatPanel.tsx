@@ -169,7 +169,7 @@ export default function ChatPanel({
                 </EmptyMedia>
                 <EmptyTitle>Start with an operational question</EmptyTitle>
                 <EmptyDescription>
-                  AuRAG can trace failures across work orders, procedures, people, documents, and regulatory clauses.
+                  KinetixRAG can trace failures across work orders, procedures, people, documents, and regulatory clauses.
                 </EmptyDescription>
               </EmptyHeader>
               <EmptyContent className="max-w-xl">
@@ -227,7 +227,7 @@ export default function ChatPanel({
               >
                 <div className="mb-2 flex items-center justify-between gap-3">
                   <span className="text-xs font-medium text-muted-foreground">
-                    {message.role === "user" ? "Operator" : "AuRAG agent"}
+                    {message.role === "user" ? "Operator" : "Kinetix agent"}
                   </span>
                   {isSelected && <Badge variant="warning">Driving evidence</Badge>}
                 </div>

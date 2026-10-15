@@ -81,7 +81,7 @@ def test_auth_enabled_rejects_missing_token(monkeypatch):
 
 
 def test_token_verification_with_test_jwt(monkeypatch):
-    secret = "aurag-test-secret-32-chars-long!!"
+    secret = "kinetix-test-secret-32-chars-long!!"
     monkeypatch.setenv("TEST_JWT_SECRET", secret)
 
     payload = {
@@ -90,7 +90,7 @@ def test_token_verification_with_test_jwt(monkeypatch):
         "name": "Jane Planner",
         "roles": ["MaintenancePlanner"],
         "site_id": "plant-mumbai-01",
-        "organization_id": "aurag-corp",
+        "organization_id": "kinetix-corp",
         "clearance_level": "RESTRICTED",
     }
     token = jwt.encode(payload, secret, algorithm="HS256")
@@ -136,7 +136,7 @@ def test_rs256_entra_jwks_verification(monkeypatch):
         "backend.app.core.auth.fetch_jwks",
         lambda: {"keys": [jwk_dict]},
     )
-    monkeypatch.setenv("ENTRA_CLIENT_ID", "aurag-api-client-id")
+    monkeypatch.setenv("ENTRA_CLIENT_ID", "kinetix-api-client-id")
     # Ensure test secret isn't interfering with RS256
     monkeypatch.delenv("TEST_JWT_SECRET", raising=False)
 
@@ -146,7 +146,7 @@ def test_rs256_entra_jwks_verification(monkeypatch):
         "email": "chief.engineer@plant.com",
         "roles": ["ReliabilityEngineer"],
         "site_id": "plant-mumbai-01",
-        "aud": "aurag-api-client-id",
+        "aud": "kinetix-api-client-id",
         "exp": now + 3600,
         "nbf": now - 60,
     }
@@ -198,7 +198,7 @@ def test_chat_http_endpoint_auth_enforcement(monkeypatch):
 
     try:
         monkeypatch.setenv("AUTH_ENABLED", "true")
-        secret = "aurag-test-secret-32-chars-long!!"
+        secret = "kinetix-test-secret-32-chars-long!!"
         monkeypatch.setenv("TEST_JWT_SECRET", secret)
 
         client = TestClient(app)

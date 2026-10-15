@@ -1,19 +1,19 @@
 <div align="center">
 
 <pre align="center">
- █████╗ ██╗   ██╗██████╗  █████╗  ██████╗ 
-██╔══██╗██║   ██║██╔══██╗██╔══██╗██╔════╝ 
-███████║██║   ██║██████╔╝███████║██║  ███╗
-██╔══██║██║   ██║██╔══██╗██╔══██║██║   ██║
-██║  ██║╚██████╔╝██║  ██║██║  ██║╚██████╔╝
-╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ 
+██╗  ██╗██╗███╗   ██╗███████╗████████╗██╗██╗  ██╗██████╗  █████╗  ██████╗ 
+██║ ██╔╝██║████╗  ██║██╔════╝╚══██╔══╝██║╚██╗██╔╝██╔══██╗██╔══██╗██╔════╝ 
+█████╔╝ ██║██╔██╗ ██║█████╗     ██║   ██║ ╚███╔╝ ██████╔╝███████║██║  ███╗
+██╔═██╗ ██║██║╚██╗██║██╔══╝     ██║   ██║ ██╔██╗ ██╔══██╗██╔══██║██║   ██║
+██║  ██╗██║██║ ╚████║███████╗   ██║   ██║██╔╝ ██╗██║  ██║██║  ██║╚██████╔╝
+╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ 
 </pre>
 
 # Hacker House Goa 2026 — Wispr Flow Shortlisting Task
-## AuRAG — Voice-Driven Development Evidence
+## KinetixRAG — Voice-Driven Development Evidence
 
 <p align="center">
-  <b>Industrial Knowledge Graph Intelligence, Predictive SCADA Telemetry & Multi-Agent Reasoning</b>
+  <b>High-Frequency Telemetry & Dynamic Industrial GraphRAG Intelligence</b>
 </p>
 
 <p align="center">
@@ -21,7 +21,7 @@
   <a href="./WISPR_EVIDENCE.md#7-testing-evidence-392-automated-checks--126-core-pytest-cases"><img src="https://img.shields.io/badge/Pytest-126%20Core%20%2F%20392%20Checks-2ea44f?style=for-the-badge&logo=pytest&logoColor=white" alt="126 Core / 392 Checks"/></a>
   <a href="https://drive.google.com/file/d/1r9GXr_XC9JMi8IEJcizFxLRLRVareDIA/view?usp=sharing"><img src="https://img.shields.io/badge/Wispr%20Build%20Video-Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white" alt="Wispr Build Video"/></a>
   <a href="https://youtu.be/FnFD2-CyXWE?si=5BlxmN8R16615zJq"><img src="https://img.shields.io/badge/Walkthrough%20Video-YouTube-red?style=for-the-badge&logo=youtube&logoColor=white" alt="Demo Video"/></a>
-  <a href="https://au-rag.vercel.app"><img src="https://img.shields.io/badge/Live%20Demo-au--rag.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo"/></a>
+  <a href="https://au-rag.vercel.app"><img src="https://img.shields.io/badge/Live%20Demo-kinetix--rag.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo"/></a>
   <a href="./wispr-flow"><img src="https://img.shields.io/badge/Screenshots-12%20Proofs-blue?style=for-the-badge&logo=googlephotos&logoColor=white" alt="12 Proof Screenshots"/></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="MIT License"/></a>
 </p>
@@ -33,7 +33,7 @@
 ## 🎙️ WISPR FLOW VOICE-DRIVEN DEVELOPMENT EVIDENCE
 
 > **Hacker House Goa 2026 Shortlisting Evaluation**  
-> AuRAG is an industrial cyber-physical GraphRAG platform. During the **Hacker House Goa 2026 engineering sprint (29 September 2026 – 10 October 2026)**, **Wispr Flow** voice dictation was used to build **100% of the platform's architectural prompt directives, multi-agent state schemas, and telemetry pipelines** (**3,911+ words dictated at 87 WPM** into the Antigravity IDE).
+> KinetixRAG is an industrial cyber-physical GraphRAG platform. During the **Hacker House Goa 2026 engineering sprint (29 September 2026 – 10 October 2026)**, **Wispr Flow** voice dictation was used to build **100% of the platform's architectural prompt directives, multi-agent state schemas, and telemetry pipelines** (**3,911+ words dictated at 87 WPM** into the Antigravity IDE).
 
 ### ⚡ Verification & Evidence Pipeline
 ```
@@ -48,7 +48,7 @@ Evidence Pack ➔ 12 Screenshots ➔ Voice Prompt Log ➔ Subsystem Traceability
 | 🔗 **Subsystem Traceability** | [**`WISPR_EVIDENCE.md#5-mapping-wispr-prompt--feature--files-changed`**](./WISPR_EVIDENCE.md#5-mapping-wispr-prompt--feature--files-changed) | Traceability showing ~30-min prompt ➔ code iteration cycles |
 | 🎥 **Walkthrough Video** | [**Watch on YouTube**](https://youtu.be/FnFD2-CyXWE?si=5BlxmN8R16615zJq) | 3-minute video presentation & interactive tour |
 | 🧪 **Test Verification** | [**`WISPR_EVIDENCE.md#7-testing-evidence-392-automated-checks--126-core-pytest-cases`**](./WISPR_EVIDENCE.md#7-testing-evidence-392-automated-checks--126-core-pytest-cases) | **126 verified core pytest cases** (392 total automated checks passing) |
-| 🌐 **Live Application** | [**au-rag.vercel.app**](https://au-rag.vercel.app) | Live production web application |
+| 🌐 **Live Application** | [**kinetix-rag.vercel.app**](https://au-rag.vercel.app) | Live production web application |
 | 📦 **Historical Archive** | [**`docs/archive/`**](./docs/archive) | Earlier exploratory PRDs and Machine Money research docs |
 
 ---
@@ -59,8 +59,8 @@ Evidence Pack ➔ 12 Screenshots ➔ Voice Prompt Log ➔ Subsystem Traceability
 >
 > 📌 **Direct Judge Quick Links**:
 > - ⚡ **Fast-Track Judge Guide**: **[JUDGE_README.md](./JUDGE_README.md)** (3-Minute Read)
-> - 🎥 **Live Demo Video**: [**AuRAG Walkthrough on YouTube**](https://youtu.be/FnFD2-CyXWE?si=5BlxmN8R16615zJq)
-> - 🌐 **Live Production App**: [au-rag.vercel.app](https://au-rag.vercel.app)
+> - 🎥 **Live Demo Video**: [**KinetixRAG Walkthrough on YouTube**](https://youtu.be/FnFD2-CyXWE?si=5BlxmN8R16615zJq)
+> - 🌐 **Live Production App**: [kinetix-rag.vercel.app](https://au-rag.vercel.app)
 > - 📜 **Full Wispr Evidence Dossier**: [**WISPR_EVIDENCE.md**](./WISPR_EVIDENCE.md) (Evidence Pack, Screenshots, Prompt Log & Traceability)
 > - 🎙️ **Wispr Flow Visual Gallery**: [**wispr-flow/**](./wispr-flow) (12 High-Res Screenshots proving voice-driven build)
 > - 🧪 **Test Evidence**: **126 verified tests in the core validation suite** in 12.56s
@@ -71,19 +71,19 @@ Evidence Pack ➔ 12 Screenshots ➔ Voice Prompt Log ➔ Subsystem Traceability
 > [!IMPORTANT]
 > **📢 Note on Submission Video Links (Platform Demo vs. Wispr Flow Voice Build Evidence):**
 > * **1. Live Platform Demonstration (Submitted Social / YouTube Link):**  
->   The link provided in the Google Form ([YouTube Video](https://youtu.be/FnFD2-CyXWE)) demonstrates the full functionality, architecture, and live UI of the AuRAG platform (NASA IMS telemetry, GraphRAG reasoning, multi-agent Copilot, and machine money workflows).
+>   The link provided in the Google Form ([YouTube Video](https://youtu.be/FnFD2-CyXWE)) demonstrates the full functionality, architecture, and live UI of the KinetixRAG platform (NASA IMS telemetry, GraphRAG reasoning, multi-agent Copilot, and machine money workflows).
 > * **2. Live Wispr Flow Voice-Driven Build Evidence (Raw Video in Repository):**  
 >   To inspect the raw, unedited ~3-minute screen recording of the **actual voice-coding session using Wispr Flow** in the IDE (live microphone dictation of telemetry health probes with 20 kHz sampling and ISO 10816 Zone C verification, followed by automated test execution), please view the video directly in the root of this repository:  
 >   👉 **[Watch Live on Google Drive (Instant 1-Click Stream)](https://drive.google.com/file/d/1r9GXr_XC9JMi8IEJcizFxLRLRVareDIA/view?usp=sharing)** *(No download required)*
->   *(Alternative offline copy in repository: [`AuRAG_Wispr_Flow_Live_Development_Evidence.mp4`](./AuRAG_Wispr_Flow_Live_Development_Evidence.mp4))*
+>   *(Alternative offline copy in repository: [`KinetixRAG_Wispr_Flow_Live_Development_Evidence.mp4`](./KinetixRAG_Wispr_Flow_Live_Development_Evidence.mp4))*
 
 ## 🎥 Video Walkthrough & Demo Presentation
 
-A dedicated video demonstration walks through AuRAG's voice-prompted architecture, live telemetry monitoring, and multi-agent GraphRAG reasoning.
+A dedicated video demonstration walks through KinetixRAG's voice-prompted architecture, live telemetry monitoring, and multi-agent GraphRAG reasoning.
 
 <div align="center">
 
-[![AuRAG Voice-Driven Demo Video](https://img.shields.io/badge/▶_Watch_Demo_Video-YouTube-red?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/FnFD2-CyXWE?si=5BlxmN8R16615zJq)
+[![KinetixRAG Voice-Driven Demo Video](https://img.shields.io/badge/▶_Watch_Demo_Video-YouTube-red?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/FnFD2-CyXWE?si=5BlxmN8R16615zJq)
 *(Click above to watch the walkthrough video)*
 
 </div>
@@ -106,8 +106,8 @@ A dedicated video demonstration walks through AuRAG's voice-prompted architectur
 
 <div align="center">
 
-### 1. AuRAG Command Center — Operational Intelligence
-<img src="./docs/screenshots/command-center-full.png" width="95%" alt="AuRAG Command Center — Operational Dashboard"/>
+### 1. KinetixRAG Command Center — Operational Intelligence
+<img src="./docs/screenshots/command-center-full.png" width="95%" alt="KinetixRAG Command Center — Operational Dashboard"/>
 <p><i>Central operations command center monitoring plant assets, active graph relationships, agent execution states, and system health.</i></p>
 
 ---
@@ -126,14 +126,14 @@ A dedicated video demonstration walks through AuRAG's voice-prompted architectur
 
 ---
 
-## 💡 What is AuRAG? (Executive Overview)
+## 💡 What is KinetixRAG? (Executive Overview)
 
 In asset-intensive facilities (power stations, refineries, chemical plants), equipment downtime costs an estimated **$22,000 to $260,000 per hour**. 
 
 When a critical pump or turbine exhibits mechanical degradation:
 1. **Telemetry is Isolated**: SCADA systems trigger threshold alarms, but operators must manually search through hundreds of PDF equipment manuals, P&ID piping diagrams, and shift logs.
 2. **Context is Fragmented**: Relational databases, maintenance records, and regulatory standards (OSHA 1910, API 610) exist in separate silos.
-3. **AuRAG Solves This**: AuRAG creates a unified **GraphRAG reasoning loop** that fuses real-time sensor streams with Neo4j property graphs, dense vector search, and a collaborative multi-agent swarm.
+3. **KinetixRAG Solves This**: KinetixRAG creates a unified **GraphRAG reasoning loop** that fuses real-time sensor streams with Neo4j property graphs, dense vector search, and a collaborative multi-agent swarm.
 
 ```mermaid
 flowchart TD
@@ -179,7 +179,7 @@ flowchart TD
 
 ## ⚡ Performance & Verified Test Results
 
-AuRAG maintains a rigorous, deterministic test suite verifying every component from telemetry generation to multi-agent reasoning:
+KinetixRAG maintains a rigorous, deterministic test suite verifying every component from telemetry generation to multi-agent reasoning:
 
 ```bash
 # Execute core validation suite locally
@@ -222,8 +222,8 @@ pytest tests/backend tests/retrieval tests/agents tests/telemetry -q
 
 ### Step 1: Clone & Configure
 ```bash
-git clone https://github.com/Niss54/Aurag.git
-cd AuRAG
+git clone https://github.com/Niss54/KinetixRAG.git
+cd KinetixRAG
 cp .env.example .env
 ```
 
@@ -251,7 +251,7 @@ npm run dev
 
 | Document | Purpose |
 | :--- | :--- |
-| [**Wispr Live Build Video (Drive Stream)**](https://drive.google.com/file/d/1r9GXr_XC9JMi8IEJcizFxLRLRVareDIA/view?usp=sharing) | **3-Minute Instant Video Stream** showing live Wispr Flow voice-prompted engineering and probe execution in IDE (or raw [in-repo MP4](./AuRAG_Wispr_Flow_Live_Development_Evidence.mp4)) |
+| [**Wispr Live Build Video (Drive Stream)**](https://drive.google.com/file/d/1r9GXr_XC9JMi8IEJcizFxLRLRVareDIA/view?usp=sharing) | **3-Minute Instant Video Stream** showing live Wispr Flow voice-prompted engineering and probe execution in IDE (or raw [in-repo MP4](./KinetixRAG_Wispr_Flow_Live_Development_Evidence.mp4)) |
 | [**WISPR_EVIDENCE.md**](./WISPR_EVIDENCE.md) | Canonical Wispr Flow voice-to-code evidence dossier, 12-screenshot analysis, and subsystem traceability |
 | [**JUDGE_README.md**](./JUDGE_README.md) | 3-minute executive evaluation guide for hackathon judges |
 | [**ARCHITECTURE.md**](./ARCHITECTURE.md) | Authoritative system architecture, graph ontology schemas, and ADRs |

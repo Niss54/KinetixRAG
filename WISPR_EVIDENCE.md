@@ -1,24 +1,24 @@
-# 🎙️ AuRAG — Wispr Flow Evidence & Development Provenance Dossier
+# 🎙️ KinetixRAG — Wispr Flow Evidence & Development Provenance Dossier
 
 > **Hackathon Event:** Hacker House Goa (HHGoa) 2026  
 > **Evaluation Task:** **Wispr Flow Shortlisting Task**  
-> **Project Title:** **AuRAG — Voice-Driven Development Evidence & Industrial Intelligence**  
-> **Repository:** [`Niss54/Aurag`](https://github.com/Niss54/Aurag)  
+> **Project Title:** **KinetixRAG — Voice-Driven Development Evidence & Industrial Intelligence**  
+> **Repository:** [`Niss54/KinetixRAG`](https://github.com/Niss54/KinetixRAG)  
 > **Voice-to-Code Technology:** **Wispr Flow Voice Dictation Engine** (3,911+ Dictated Words at 87 WPM)  
 > **Proof Vault:** [`wispr-flow/`](./wispr-flow) (12 High-Resolution Visual Evidence Artifacts)  
 > **Verified Test Suites:** **126 verified core pytest cases** (317 backend pytest tests, 61 frontend Vitest tests, 6 browser E2E checks — 392 total automated checks passing)  
-> **Live Voice Coding Video:** [**Watch on Google Drive (Instant Stream)](https://drive.google.com/file/d/1r9GXr_XC9JMi8IEJcizFxLRLRVareDIA/view?usp=sharing)** *(or raw [in-repo MP4](./AuRAG_Wispr_Flow_Live_Development_Evidence.mp4))*
-> **Platform Walkthrough Video:** [**AuRAG Demo on YouTube**](https://youtu.be/FnFD2-CyXWE?si=5BlxmN8R16615zJq)
+> **Live Voice Coding Video:** [**Watch on Google Drive (Instant Stream)](https://drive.google.com/file/d/1r9GXr_XC9JMi8IEJcizFxLRLRVareDIA/view?usp=sharing)** *(or raw [in-repo MP4](./KinetixRAG_Wispr_Flow_Live_Development_Evidence.mp4))*
+> **Platform Walkthrough Video:** [**KinetixRAG Demo on YouTube**](https://youtu.be/FnFD2-CyXWE?si=5BlxmN8R16615zJq)
 
 ---
 
 ## 1. Project Overview
 
-**AuRAG is an Industrial Cyber-Physical GraphRAG Intelligence & Predictive Telemetry Platform.**
+**KinetixRAG is an Industrial Cyber-Physical GraphRAG Intelligence & Predictive Telemetry Platform.**
 
 In asset-intensive industrial facilities (refineries, power plants, automated chemical manufacturing), equipment downtime costs an average of **$22,000 to $260,000 per hour**. When a critical slurry pump or turbine bearing begins to degrade, human operators are forced to navigate through fragmented information silos: hundreds of PDF equipment operating manuals, unlinked P&ID schematics, historical shift notes, and disparate ERP work order records.
 
-AuRAG solves this by uniting physical telemetry with deterministic knowledge graphs and autonomous multi-agent reasoning:
+KinetixRAG solves this by uniting physical telemetry with deterministic knowledge graphs and autonomous multi-agent reasoning:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -53,7 +53,7 @@ AuRAG solves this by uniting physical telemetry with deterministic knowledge gra
 
 In high-integrity engineering evaluation, claims must reflect real-world development practices. Complex production platforms are not spun out of an empty void solely by voice in a single moment. 
 
-AuRAG’s authentic engineering provenance is structured as follows:
+KinetixRAG’s authentic engineering provenance is structured as follows:
 * **Development Span**: The intensive voice-driven engineering sprint was conducted **29 September 2026 – 10 October 2026** for the Hacker House Goa 2026 Wispr Flow task.
 * **100% Voice-Driven Prompt Engineering Sprint**: During the intensive **Hacker House Goa 2026 sprint (29 September 2026 – 10 October 2026)**, **Wispr Flow** was deployed as the voice dictation engine to dictate 100% of the platform's architectural prompts, multi-agent state schemas, telemetry pipelines, and system integration into the Antigravity IDE.
 * **Empirical Voice Metrics**: Over **3,911 total words were dictated at an average velocity of 87 WPM**, documented and verified in the official Wispr Flow session dashboard ([`wispr-flow/ss12.png`](./wispr-flow/ss12.png)) and 11 accompanying visual captures.
@@ -90,7 +90,7 @@ flowchart LR
 Below is the structured catalog of atomic voice prompts dictated through **Wispr Flow** to drive code generation, architectural decisions, and verification across each development phase.
 
 ### Phase 1: Inception, Environment & Cloud Infrastructure
-* **Prompt 1.1 (Repository Scaffolding)**: *"Create the initial repository structure for AuRAG: autonomous retrieval augmented generation for industrial plants. Add an MIT license, standard gitignore for Python and Node, and a clean README explaining the high-level platform mission."*
+* **Prompt 1.1 (Repository Scaffolding)**: *"Create the initial repository structure for KinetixRAG: autonomous retrieval augmented generation for industrial plants. Add an MIT license, standard gitignore for Python and Node, and a clean README explaining the high-level platform mission."*
 * **Prompt 1.2 (Dependency Architecture)**: *"Configure Python 3.12 pyproject.toml and requirements.txt including FastAPI, Pydantic v2, Neo4j driver, Qdrant client, SQLAlchemy, pytest, and langchain-core. Set up deterministic dependency lockfiles."*
 * **Prompt 1.3 (Docker & Multi-Cloud Manifests)**: *"Generate Dockerfiles for backend and frontend along with docker-compose.yml for local development orchestrating Neo4j 5 enterprise, Qdrant vector database, and Redis caching."*
 * **Prompt 1.4 (Ontology Schema & Cypher Seeds)**: *"Write Cypher seeding scripts establishing the industrial knowledge graph schema: Equipment nodes with ISA-5.1 tag IDs, FailureEvent nodes, MaintenanceWorkOrder records, and Sensor Telemetry points."*
@@ -462,10 +462,10 @@ The table below catalogs the full architecture across all 8 development phases:
 
 ## 6. Live Demo & Video Presentation
 
-AuRAG is designed to run reliably in both standalone offline demonstration environments and live web deployments.
+KinetixRAG is designed to run reliably in both standalone offline demonstration environments and live web deployments.
 
 ### 6.1 Online & Local Access
-* 🌐 **Production Web Application**: [**au-rag.vercel.app**](https://au-rag.vercel.app)
+* 🌐 **Production Web Application**: [**kinetix-rag.vercel.app**](https://au-rag.vercel.app)
 * 💻 **Local URL**: [**http://localhost:3000**](http://localhost:3000)
 * 📖 **FastAPI Interactive Docs**: [**http://localhost:8000/docs**](http://localhost:8000/docs)
 
@@ -473,14 +473,14 @@ AuRAG is designed to run reliably in both standalone offline demonstration envir
 > [!IMPORTANT]
 > **📢 Note on Submission Video Links (Platform Demo vs. Wispr Flow Voice Build Evidence):**
 > * **1. Live Platform Demonstration (Submitted Social / YouTube Link):**  
->   The link provided in the Google Form ([YouTube Video](https://youtu.be/FnFD2-CyXWE)) demonstrates the full functionality, architecture, and live UI of the AuRAG platform (NASA IMS telemetry, GraphRAG reasoning, multi-agent Copilot, and machine money workflows).
+>   The link provided in the Google Form ([YouTube Video](https://youtu.be/FnFD2-CyXWE)) demonstrates the full functionality, architecture, and live UI of the KinetixRAG platform (NASA IMS telemetry, GraphRAG reasoning, multi-agent Copilot, and machine money workflows).
 > * **2. Live Wispr Flow Voice-Driven Build Evidence (Raw Video in Repository):**  
 >   To inspect the raw, unedited ~3-minute screen recording of the **actual voice-coding session using Wispr Flow** in the IDE (live microphone dictation of telemetry health probes with 20 kHz sampling and ISO 10816 Zone C verification, followed by automated test execution), please view the video directly in the root of this repository:  
 >   👉 **[Watch Live on Google Drive (Instant 1-Click Stream)](https://drive.google.com/file/d/1r9GXr_XC9JMi8IEJcizFxLRLRVareDIA/view?usp=sharing)** *(No download required)*
->   *(Alternative offline copy in repository: [`AuRAG_Wispr_Flow_Live_Development_Evidence.mp4`](./AuRAG_Wispr_Flow_Live_Development_Evidence.mp4))*
+>   *(Alternative offline copy in repository: [`KinetixRAG_Wispr_Flow_Live_Development_Evidence.mp4`](./KinetixRAG_Wispr_Flow_Live_Development_Evidence.mp4))*
 
 ### 6.2 3-Minute Video Walkthrough
-* Watch the recorded walkthrough: **[AuRAG Voice-Driven Demo on YouTube](https://youtu.be/FnFD2-CyXWE?si=5BlxmN8R16615zJq)**
+* Watch the recorded walkthrough: **[KinetixRAG Voice-Driven Demo on YouTube](https://youtu.be/FnFD2-CyXWE?si=5BlxmN8R16615zJq)**
 
 | Timestamp | Scene | Key Feature Demonstrated |
 | :---: | :--- | :--- |
@@ -495,8 +495,8 @@ To launch the complete platform locally:
 
 ```bash
 # Step 1: Clone the repository
-git clone https://github.com/Niss54/Aurag.git
-cd AuRAG
+git clone https://github.com/Niss54/KinetixRAG.git
+cd KinetixRAG
 
 # Step 2: Launch backend services
 python -m pip install -r requirements.txt
@@ -512,7 +512,7 @@ npm run dev
 
 ## 7. Testing Evidence (392 Automated Checks / 126 Core Pytest Cases)
 
-AuRAG enforces deterministic code quality across all core engineering subsystems, validated across multiple automated test suites:
+KinetixRAG enforces deterministic code quality across all core engineering subsystems, validated across multiple automated test suites:
 
 ### 7.1 Fast Core Validation Suite (126 Tests)
 ```bash
@@ -522,7 +522,7 @@ pytest tests/backend tests/retrieval tests/agents tests/telemetry -q
 ```text
 ============================= test session starts =============================
 platform win32 -- Python 3.12.x, pytest-8.x.x
-rootdir: C:\Users\nisha\OneDrive\Documents\Downloads\AuRAG2
+rootdir: C:\Users\nisha\OneDrive\Documents\Downloads\KinetixRAG
 collected 126 items
 
 tests/backend/test_api_endpoints.py ..........................          [ 20%]
@@ -551,7 +551,7 @@ tests/telemetry/test_nasa_scada_opcua.py .....................           [100%]
 
 ## 8. Architecture
 
-AuRAG unites cyber-physical instrumentation, graph knowledge representation, and autonomous multi-agent swarms into a unified architecture.
+KinetixRAG unites cyber-physical instrumentation, graph knowledge representation, and autonomous multi-agent swarms into a unified architecture.
 
 ### End-to-End System Architecture
 
@@ -603,5 +603,5 @@ In the interest of full technical transparency, the following architectural cons
 
 ---
 
-> 🏛️ **AuRAG — Sovereign Cyber-Physical Intelligence for Industrial Knowledge Systems.**  
+> 🏛️ **KinetixRAG — Sovereign Cyber-Physical Intelligence for Industrial Knowledge Systems.**  
 > Built with precision, verified with data, and dictated via **Wispr Flow**.

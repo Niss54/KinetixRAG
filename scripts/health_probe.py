@@ -1,4 +1,4 @@
-"""Synthetic Deep Health & Readiness Probe for AuRAG Production Monitoring.
+"""Synthetic Deep Health & Readiness Probe for KinetixRAG Production Monitoring.
 
 Runs comprehensive checks against:
 - Liveness (/api/health/live)
@@ -23,7 +23,7 @@ logger = logging.getLogger("health_probe")
 def check_http_endpoint(url: str, timeout_seconds: float = 5.0) -> dict:
     start = time.time()
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": "AuRAG-HealthProbe/1.0"})
+        req = urllib.request.Request(url, headers={"User-Agent": "KinetixRAG-HealthProbe/1.0"})
         with urllib.request.urlopen(req, timeout=timeout_seconds) as response:
             latency_ms = round((time.time() - start) * 1000, 2)
             body = response.read().decode("utf-8")
@@ -99,7 +99,7 @@ def run_synthetic_probe(base_url: str = "http://localhost:8000", timeout_seconds
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="AuRAG Synthetic Health Probe")
+    parser = argparse.ArgumentParser(description="KinetixRAG Synthetic Health Probe")
     parser.add_argument("--url", default="http://localhost:8000", help="Base backend URL")
     parser.add_argument("--timeout", type=float, default=5.0, help="Per-endpoint HTTP timeout in seconds")
     parser.add_argument("--allow-degraded", action="store_true", help="Exit with 0 even if dependencies report DEGRADED")

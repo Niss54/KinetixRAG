@@ -32,7 +32,7 @@ def run_benchmark(mode: str = "offline", limit: int | None = None):
         cases = cases[:limit]
 
     print("=" * 78)
-    print(f" AuRAG Golden Evaluation Benchmark (52 Scenarios) - Execution Mode: {mode.upper()}")
+    print(f" KinetixRAG Golden Evaluation Benchmark (52 Scenarios) - Execution Mode: {mode.upper()}")
     print("=" * 78)
     print(f"Loaded {len(cases)} industrial test cases from evaluation/benchmark_50.json")
     print("-" * 78)

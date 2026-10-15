@@ -33,7 +33,7 @@ TMP_DIR = ROOT / "tmp" / "pdfs"
 FIG_DIR = ROOT / "figures"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 TMP_DIR.mkdir(parents=True, exist_ok=True)
-OUTPUT = OUT_DIR / "aurag-technical-documentation.pdf"
+OUTPUT = OUT_DIR / "kinetix-technical-documentation.pdf"
 
 
 def register_fonts() -> tuple[str, str, str]:
@@ -418,7 +418,7 @@ def cover_page(story: list):
     hero = Table(
         [
             [P("TECHNICAL DOCUMENTATION", "Eyebrow")],
-            [P("AuRAG", "CoverTitle")],
+            [P("KinetixRAG", "CoverTitle")],
             [P("Industrial Knowledge Intelligence and Unified Operations Agent", "CoverSub")],
         ],
         colWidths=[6.35 * inch],
@@ -467,7 +467,7 @@ def toc(story: list):
     story.append(SectionBand("Navigation", "Contents", "How this document is organized"))
     story.append(Spacer(1, 0.2 * inch))
     entries = [
-        ("01", "Executive Summary", "What AuRAG does and where its value comes from"),
+        ("01", "Executive Summary", "What KinetixRAG does and where its value comes from"),
         ("02", "System Architecture", "Runtime topology and architectural boundaries"),
         ("03", "Ingestion and Knowledge Graph", "How plant documents become linked evidence"),
         ("04", "Retrieval and Agent Orchestration", "Hybrid retrieval, routing, and grounded answers"),
@@ -509,7 +509,7 @@ def build_story() -> list:
     toc(story)
 
     section(story, "01", "Executive Summary", "The product thesis, current implementation, and operating model")
-    story.append(P("<b>AuRAG</b> is an industrial knowledge intelligence platform that turns fragmented plant records, equipment history, procedures, regulatory clauses, and telemetry signals into a grounded operational workflow. The primary interaction is a single operator console: ask a question, inspect the evidence graph, see the routed specialist, and move from a detected signal to a reviewed work order.", "BodyCustom"))
+    story.append(P("<b>KinetixRAG</b> is an industrial knowledge intelligence platform that turns fragmented plant records, equipment history, procedures, regulatory clauses, and telemetry signals into a grounded operational workflow. The primary interaction is a single operator console: ask a question, inspect the evidence graph, see the routed specialist, and move from a detected signal to a reviewed work order.", "BodyCustom"))
     story.append(P("The implementation combines a graph-first data model with multiple retrieval strategies. Neo4j stores the operational relationships and is also used for native vector search. Qdrant supplies an independent dense-vector index, BM25 supplies keyword recall, graph traversal supplies entity-aware evidence, and a local cross-encoder reranks the fused candidates.", "BodyCustom"))
     story.append(P("The application is intentionally fail-open at several boundaries. A scoring failure does not remove an answer, a mem0 failure does not block chat, a provider failure is surfaced as a clean API error, and work-order decisions use optimistic version checks to prevent stale edits from silently overwriting operator changes.", "BodyCustom"))
     story.append(Spacer(1, 0.08 * inch))
@@ -527,7 +527,7 @@ def build_story() -> list:
 
     section(story, "02", "System Architecture", "Logical layers and dependency boundaries")
     story.append(P("The system is organized into five runtime planes: user experience, application API, knowledge intelligence, persistence/runtime services, and model providers. The FastAPI layer is an adapter and orchestration boundary; domain behavior remains in agents, retrieval, telemetry, ingestion, evaluation, and service modules.", "BodyCustom"))
-    story.append(Diagram(FIG_DIR / "aurag-platform-architecture.png", "Figure 1. Current AuRAG platform architecture."))
+    story.append(Diagram(FIG_DIR / "kinetix-platform-architecture.png", "Figure 1. Current KinetixRAG platform architecture."))
     story.append(Spacer(1, 0.1 * inch))
     story.append(P("The browser never connects directly to Neo4j. Graph evidence is requested through <font name='Courier'>POST /api/graph</font>, which resolves answer-specific typed paths server-side. This keeps graph credentials and query construction on the backend and makes the frontend contract stable.", "BodyCustom"))
     story.append(table([
@@ -542,11 +542,11 @@ def build_story() -> list:
 
     section(story, "03", "Ingestion and Knowledge Graph", "Convergent parsing, entity linking, and durable evidence")
     story.append(P("All ingestion paths converge on <font name='Courier'>ingestion.pipeline.ingest_file()</font>. Clean text is parsed directly, scanned images use Tesseract with a Gemini fallback, and P&ID diagrams use Gemini vision to produce page summaries, equipment mentions, and connection candidates. The pipeline uses closed-world matching: only known equipment and personnel are linked, preventing uncontrolled graph expansion from model hallucinations.", "BodyCustom"))
-    story.append(Diagram(FIG_DIR / "aurag-ingestion-pipeline.png", "Figure 2. Ingestion convergence and dual vector indexing."))
+    story.append(Diagram(FIG_DIR / "kinetix-ingestion-pipeline.png", "Figure 2. Ingestion convergence and dual vector indexing."))
     story.append(Spacer(1, 0.08 * inch))
     story.append(P("Document identity is content-hash based. Unchanged files are fast no-ops. Changed documents clear and rebuild their chunks and P&ID relationships, then update the content hash only after Neo4j and Qdrant indexing succeeds. That ordering preserves retryability when vector indexing or a provider call fails.", "BodyCustom"))
     story.append(P("Neo4j is the relationship authority. The current schema includes unique constraints for equipment, documents, chunks, people, work orders, failure events, regulatory clauses, procedures, evaluations, predictive events, notifications, and work-order decisions. A 384-dimensional cosine vector index is created over Chunk embeddings.", "BodyCustom"))
-    story.append(Diagram(FIG_DIR / "aurag-knowledge-graph.png", "Figure 3. Persisted knowledge and operational relationship model.", max_height=5.7 * inch))
+    story.append(Diagram(FIG_DIR / "kinetix-knowledge-graph.png", "Figure 3. Persisted knowledge and operational relationship model.", max_height=5.7 * inch))
     story.append(PageBreak())
 
     section(story, "04", "Retrieval and Agent Orchestration", "From query intent to cited answer")
@@ -560,7 +560,7 @@ def build_story() -> list:
     ], [1.15 * inch, 2.2 * inch, 3.5 * inch]))
     story.append(Spacer(1, 0.14 * inch))
     story.append(P("Hybrid retrieval collects up to ten candidates per source, deduplicates by source key, applies explicit equipment/name and year filters, then reranks the remaining passages with the configured local cross-encoder. The answer layer receives a context-key whitelist, and model citations are filtered against that whitelist before they can reach the UI or graph resolver.", "BodyCustom"))
-    story.append(Diagram(FIG_DIR / "aurag-query-lifecycle.png", "Figure 4. Query lifecycle from operator question to async score."))
+    story.append(Diagram(FIG_DIR / "kinetix-query-lifecycle.png", "Figure 4. Query lifecycle from operator question to async score."))
     story.append(Spacer(1, 0.1 * inch))
     story.append(callout("Why the graph matters", "Dense retrieval finds semantically similar passages. Graph traversal adds the relationship path that connects a failure, asset, work order, procedure, person, clause, or predictive event into an inspectable answer trail.", "purple"))
     story.append(PageBreak())
@@ -631,7 +631,7 @@ def build_story() -> list:
         ["Frontend", "npm.cmd --prefix frontend run dev", "Next.js dev server; usually port 3000."],
         ["Telemetry", "python -m telemetry.worker", "Continuous synthetic scan and event publication."],
         ["Ingestion watcher", "python -m ingestion.workers.watcher", "Watch directory to Redis/RQ handoff."],
-        ["RQ worker", "rq worker aurag-ingest", "Use SimpleWorker on Windows."],
+        ["RQ worker", "rq worker kinetix-ingest", "Use SimpleWorker on Windows."],
         ["Managed API", "render.yaml", "Render API plus telemetry and ingestion worker services."],
         ["Managed UI", "frontend/vercel.json", "Vercel project rooted at frontend/."],
     ], [1.35 * inch, 3.0 * inch, 2.5 * inch]))
@@ -641,7 +641,7 @@ def build_story() -> list:
     story.append(PageBreak())
 
     section(story, "09", "Security, Reliability, and Data Governance", "Trust boundaries and failure behavior")
-    story.append(P("AuRAG is currently a local/demo-oriented operator application rather than a multi-tenant security product. There is no authentication or authorization layer in the repository. User identity is used for mem0 scoping and work-order actor attribution, but it is not an access-control boundary.", "BodyCustom"))
+    story.append(P("KinetixRAG is currently a local/demo-oriented operator application rather than a multi-tenant security product. There is no authentication or authorization layer in the repository. User identity is used for mem0 scoping and work-order actor attribution, but it is not an access-control boundary.", "BodyCustom"))
     story.append(table([
         ["Concern", "Current control", "Residual risk / next action"],
         ["Secrets", "Provider keys come from .env; Docker image excludes local .env.", "Use managed secret storage and rotation for production."],
@@ -722,7 +722,7 @@ def build_story() -> list:
     ], [2.65 * inch, 4.2 * inch]))
     story.append(Spacer(1, 0.16 * inch))
     story.append(P("Document provenance", "H2Custom"))
-    story.append(P("This technical specification reflects the AuRAG workspace implementation for Hacker House Goa (HHGoa). Runtime availability, provider credentials, database contents, and deployment readiness can change independently of the document and must be verified with the live smoke suite.", "BodyCustom"))
+    story.append(P("This technical specification reflects the KinetixRAG workspace implementation for Hacker House Goa (HHGoa). Runtime availability, provider credentials, database contents, and deployment readiness can change independently of the document and must be verified with the live smoke suite.", "BodyCustom"))
     story.append(Spacer(1, 0.3 * inch))
     story.append(callout("End state", "Core product implementation is broad and internally coherent. Production readiness remains an operational verification problem: infrastructure, credentials, browser CORS, and release evidence must all be green together.", "teal"))
     return story
@@ -737,7 +737,7 @@ def draw_header_footer(canvas, doc):
         canvas.line(0.72 * inch, 0.58 * inch, 7.78 * inch, 0.58 * inch)
         canvas.setFont(FONT_BOLD, 7.5)
         canvas.setFillColor(TEAL)
-        canvas.drawString(0.72 * inch, 0.36 * inch, "AURAG  /  TECHNICAL DOCUMENTATION")
+        canvas.drawString(0.72 * inch, 0.36 * inch, "KINETIXRAG  /  TECHNICAL DOCUMENTATION")
         canvas.setFont(FONT, 7.5)
         canvas.setFillColor(MUTED)
         canvas.drawRightString(7.78 * inch, 0.36 * inch, f"{page:02d}")
@@ -752,8 +752,8 @@ def main():
         rightMargin=0.72 * inch,
         topMargin=0.62 * inch,
         bottomMargin=0.72 * inch,
-        title="AuRAG Technical Documentation",
-        author="AuRAG Engineering",
+        title="KinetixRAG Technical Documentation",
+        author="KinetixRAG Engineering",
         subject="Industrial Knowledge Intelligence platform",
     )
     frame = Frame(doc.leftMargin, doc.bottomMargin, doc.width, doc.height, id="normal")

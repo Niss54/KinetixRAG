@@ -8,11 +8,11 @@
 
 ## 1. Architectural Overview
 
-To eliminate the credibility gap of evaluating bids strictly inside an in-memory dictionary, AuRAG decouples vendor bidding into **independently addressable HTTP microservices**.
+To eliminate the credibility gap of evaluating bids strictly inside an in-memory dictionary, KinetixRAG decouples vendor bidding into **independently addressable HTTP microservices**.
 
 ```mermaid
 flowchart LR
-    subgraph AuRAG Core
+    subgraph KinetixRAG Core
         Engine["RFQ Engine<br/>(backend/rfq.py)"]
         PolicyGate["Spending Policy Engine<br/>(backend/policy.py)"]
         Settlement["Lightning Settlement<br/>(backend/providers/)"]
@@ -49,7 +49,7 @@ Each vendor node is implemented as a standalone service with its own cryptograph
 | **Quantum Reliability** | `8103` | `VENDOR_QUANTUM_URL` | Comprehensive Rotary Overhaul (Maximum Scope) | `02c3c3...` |
 
 ### Environment Variables
-AuRAG business logic never hardcodes `localhost` URLs. All endpoints are resolved dynamically:
+KinetixRAG business logic never hardcodes `localhost` URLs. All endpoints are resolved dynamically:
 ```bash
 VENDOR_APEX_URL=http://localhost:8101
 VENDOR_PRECISION_URL=http://localhost:8102
@@ -115,12 +115,12 @@ Accepts RFQ intent and responds with a verifiable quote and BOLT11 invoice:
 
 ## 4. Resilience, Validation & Failure Handling
 
-The AuRAG RFQ engine (`dispatch_http_rfq`) enforces robust production-grade boundaries:
+The KinetixRAG RFQ engine (`dispatch_http_rfq`) enforces robust production-grade boundaries:
 1. **Response Schema Validation**: Checks presence and types of `amount_sats`, `sla_hours`, `reliability_score`, `valid_until`. Malformed responses are dropped.
 2. **Quote Expiration Gate**: Bids where `valid_until < now` are immediately rejected.
 3. **Timeout & Connection Failure**: If an endpoint times out or returns HTTP 500, the error is logged and the remaining nodes are evaluated.
 4. **Zero-Daemon Development Fallback**: In test environments where standalone background daemon processes are not spawned, the engine executes direct in-process ASGI calls via `httpx.ASGITransport(app=vendor_app)`, providing 100% test coverage without port collisions.
-5. **Full Offline Fallback**: If all network and ASGI endpoints are unreachable, AuRAG falls back gracefully to its deterministic local catalog with explicit `is_synthetic: true` labeling.
+5. **Full Offline Fallback**: If all network and ASGI endpoints are unreachable, KinetixRAG falls back gracefully to its deterministic local catalog with explicit `is_synthetic: true` labeling.
 
 ---
 

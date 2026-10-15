@@ -45,7 +45,7 @@ class UserProfile(BaseModel):
     name: str | None = None
     roles: list[str] = Field(default_factory=list)
     site_id: str = "plant-mumbai-01"
-    organization_id: str = "aurag-industrial"
+    organization_id: str = "kinetix-industrial"
     clearance_level: ClearanceLevel = ClearanceLevel.INTERNAL
 
     def has_role(self, role: str) -> bool:
@@ -218,7 +218,7 @@ def claims_to_user_profile(claims: dict, request: Request | None = None) -> User
     org_id = claims.get("organization_id")
     if not org_id and request:
         org_id = request.headers.get("X-Organization-ID")
-    org_id = org_id or "aurag-industrial"
+    org_id = org_id or "kinetix-industrial"
 
     raw_clearance = claims.get("clearance_level", "INTERNAL").upper()
     try:
@@ -266,7 +266,7 @@ def get_current_user(
             name="Plant Local Operator",
             roles=dev_roles,
             site_id=dev_site_id,
-            organization_id="aurag-industrial",
+            organization_id="kinetix-industrial",
             clearance_level=ClearanceLevel.INTERNAL,
         )
 

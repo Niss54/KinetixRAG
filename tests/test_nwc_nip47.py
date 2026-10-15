@@ -1,4 +1,4 @@
-"""Unit tests for Nostr Wallet Connect (NIP-47) in AuRAG Machine Money."""
+"""Unit tests for Nostr Wallet Connect (NIP-47) in KinetixRAG Machine Money."""
 
 import json
 import pytest
@@ -31,7 +31,7 @@ def test_nwc_uri_parsing_and_building():
     wallet_pubkey = "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
     secret = "fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210"
     relay = "wss://relay.damus.io"
-    lud16 = "aurag-agent@hhgoa.org"
+    lud16 = "kinetix-agent@hhgoa.org"
 
     uri = build_nwc_uri(wallet_pubkey, relay, secret, lud16)
     cfg = parse_nwc_uri(uri)
@@ -97,7 +97,7 @@ def test_bip340_schnorr_signatures():
     import hashlib
 
     priv_hex, pub_hex = generate_nwc_keypair()
-    message = b"AuRAG Machine Money BIP-340 Signature Verification"
+    message = b"KinetixRAG Machine Money BIP-340 Signature Verification"
     digest = hashlib.sha256(message).digest()
 
     # 1. Sign
@@ -164,7 +164,7 @@ def test_multi_hop_lightning_routing_engine():
     assert route["destination_amount_sats"] == 250
     assert route["total_hops"] == 3
     assert len(route["path"]) == 4
-    assert route["path"][0] == "AuRAG Plant Edge Gateway (P-101A)"
+    assert route["path"][0] == "KinetixRAG Plant Edge Gateway (P-101A)"
     assert route["path"][-1] == "Apex Diagnostics Autonomous Node"
     assert route["total_network_fees_sats"] >= 1
     assert route["sphinx_onion"]["payload_bytes"] == 1366

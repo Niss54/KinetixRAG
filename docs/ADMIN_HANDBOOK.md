@@ -1,10 +1,10 @@
-# AuRAG Plant Administrator & Operations Handbook
+# KinetixRAG Plant Administrator & Operations Handbook
 
 ## 1. Microsoft Entra ID (Azure AD) Registration
 
 To configure enterprise authentication for plant operators and engineers:
 1. In the Microsoft Entra admin center, navigate to **Identity > Applications > App registrations**.
-2. Create a new registration named `AuRAG-Plant-Operations`.
+2. Create a new registration named `KinetixRAG-Plant-Operations`.
 3. In **App roles**, configure the 7 industrial roles:
    * `PlantOperator` (Operational query access)
    * `ReliabilityEngineer` (Root cause analysis, evaluation remediation)
@@ -13,7 +13,7 @@ To configure enterprise authentication for plant operators and engineers:
    * `OperationsLead` (Shift supervisor approvals)
    * `AutomationAdmin` (Automation policy configuration)
    * `PlantManager` (Full administrative governance)
-4. Under **Expose an API**, set Application ID URI: `api://aurag-enterprise-app`.
+4. Under **Expose an API**, set Application ID URI: `api://kinetix-enterprise-app`.
 5. Update environment variables on the ECS backend task:
    ```env
    ENTRA_TENANT_ID=<your-tenant-id>
@@ -25,7 +25,7 @@ To configure enterprise authentication for plant operators and engineers:
 
 ## 2. Enterprise Connector Setup & Delta Synchronization
 
-AuRAG continuously synchronizes with plant source systems via `/api/connectors`:
+KinetixRAG continuously synchronizes with plant source systems via `/api/connectors`:
 
 | Connector | Source System | Typical Interval | Sync Type |
 |---|---|---|---|

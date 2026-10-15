@@ -1,10 +1,10 @@
-# AuRAG — Machine Money Judge Demo Script (3–5 Minutes)
+# KinetixRAG — Machine Money Judge Demo Script (3–5 Minutes)
 
 **Event:** Hacker House Goa (HHGoa) 2026  
 **Track:** Autonomous Machine Money & Industrial Intelligence  
-**Speaker:** AuRAG Team  
-**Live Demo URL:** [https://au-rag.vercel.app/machine-money](https://au-rag.vercel.app/machine-money)  
-**Backend API:** [https://aurag-production.up.railway.app](https://aurag-production.up.railway.app)  
+**Speaker:** KinetixRAG Team  
+**Live Demo URL:** [https://kinetix-rag.vercel.app/machine-money](https://au-rag.vercel.app/machine-money)  
+**Backend API:** [https://kinetix-production.up.railway.app](https://kinetix-production.up.railway.app)  
 **Target Duration:** 4 to 5 minutes  
 
 ---
@@ -12,11 +12,11 @@
 ## ⏱️ Minute-by-Minute Narration & Screen Guide
 
 ### 🎬 Part 1: The Core Problem (0:00 – 0:20)
-* **Screen:** Open [`https://au-rag.vercel.app/machine-money`](https://au-rag.vercel.app/machine-money) displaying the top Judge Orientation Ribbon.
+* **Screen:** Open [`https://kinetix-rag.vercel.app/machine-money`](https://au-rag.vercel.app/machine-money) displaying the top Judge Orientation Ribbon.
 * **Narration:**
   > "Judges, modern industrial IoT is filled with sensors that detect critical anomalies in milliseconds. But what happens next? 
   > Action stops. Work orders sit in disconnected ERP queues, vendor dispatch takes days of manual invoicing, and plants suffer catastrophic unplanned downtime.
-  > Today, we present **AuRAG Machine Money** — an industrial-grade autonomous machine-to-machine payment protocol that binds **physical industrial telemetry**, **deterministic GraphRAG evidence**, **automated spending governance**, and **Bitcoin Lightning micro-settlement** into a single closed loop."
+  > Today, we present **KinetixRAG Machine Money** — an industrial-grade autonomous machine-to-machine payment protocol that binds **physical industrial telemetry**, **deterministic GraphRAG evidence**, **automated spending governance**, and **Bitcoin Lightning micro-settlement** into a single closed loop."
 
 ---
 
@@ -25,7 +25,7 @@
 * **Narration:**
   > "Before a single satoshi moves, a machine must prove *why* it is paying. 
   > Notice our above-the-fold Judge Orientation ribbon:
-  > In AuRAG, Crude Charge Pump **P-101A** experienced an ISO 10816 Zone C radial vibration excursion reaching 5.8 mm/s against a 4.5 mm/s limit.
+  > In KinetixRAG, Crude Charge Pump **P-101A** experienced an ISO 10816 Zone C radial vibration excursion reaching 5.8 mm/s against a 4.5 mm/s limit.
   > Our hybrid GraphRAG engine instantly correlated this vibration spectrogram with historical failure signature **FE-001** and maintenance standard **PROC-001** with 94% confidence.
   > Machine Money never hallucinates or pays blindly — financial settlement is strictly grounded in immutable operational evidence."
 
@@ -88,7 +88,7 @@
   > 2. **Complete Test Coverage:** 126 verified tests in the core validation suite (392 total automated verification checks) executing in 12.56s.
   > 3. **Production Deployed:** Next.js 16.2.11 live on Vercel, FastAPI Docker container live on Railway.
   > 4. **Authentic Provenance:** All code custom developed for Hacker House Goa with full architectural verification.
-  > AuRAG proves that when machines have money, industrial operations transform from slow, reactive maintenance into autonomous, self-healing cyber-physical infrastructure designed for zero unplanned downtime.
+  > KinetixRAG proves that when machines have money, industrial operations transform from slow, reactive maintenance into autonomous, self-healing cyber-physical infrastructure designed for zero unplanned downtime.
   > Thank you, and we welcome your questions!"
 
 ---

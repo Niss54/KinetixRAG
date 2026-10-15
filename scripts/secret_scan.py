@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Pre-submission Secret and Credential Scanner for AuRAG.
+Pre-submission Secret and Credential Scanner for KinetixRAG.
 Verifies SEC-01 and Task 9.1:
 - Scans source code, config files, and tests for exposed production credentials.
 - Checks git status for any untracked or accidentally tracked .env files.

@@ -258,7 +258,7 @@ export function NovelBitcoinProtocol({
                     Zero-Custody Guarantee
                   </span>
                   <p className="text-muted-foreground text-[11px] leading-relaxed">
-                    AuRAG plant agents hold zero private keys for Lightning nodes. Remote authorizations are strictly bounded
+                    KinetixRAG plant agents hold zero private keys for Lightning nodes. Remote authorizations are strictly bounded
                     by spending budgets via Nostr ECDH event signing.
                   </p>
                 </div>

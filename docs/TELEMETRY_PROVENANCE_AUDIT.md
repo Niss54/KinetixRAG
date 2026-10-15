@@ -8,7 +8,7 @@
 
 ## 1. Executive Summary
 
-This audit establishes the exact lineage and technical truthfulness of AuRAG's industrial telemetry ingestion, pattern matching, predictive health calculation, and autonomous settlement triggering. 
+This audit establishes the exact lineage and technical truthfulness of KinetixRAG's industrial telemetry ingestion, pattern matching, predictive health calculation, and autonomous settlement triggering. 
 
 The audit identifies:
 - Where synthetic variables and seeded assets (such as `P-101A` and `VIB-301-BEARING`) originate.

@@ -944,7 +944,7 @@ class MachineMoneyService:
         # Stage 5: INVOICE_GENERATED
         invoice_req = InvoiceRequest(
             amount_sats=cost_sats,
-            memo=f"[AuRAG] {equipment_id} {service_id}",
+            memo=f"[KinetixRAG] {equipment_id} {service_id}",
             work_order_id="WO-2026-P101",
             event_id=evt_id,
             equipment_id=equipment_id,

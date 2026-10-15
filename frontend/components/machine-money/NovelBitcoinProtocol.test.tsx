@@ -22,7 +22,7 @@ describe("NovelBitcoinProtocol Component", () => {
 
     vi.spyOn(api, "getRoutingTopology").mockResolvedValue({
       nodes: [
-        { pubkey: "node-plant", alias: "AuRAG Plant Edge", role: "SOURCE", location: "Mumbai", color: "#8b5cf6" },
+        { pubkey: "node-plant", alias: "Kinetix Plant Edge", role: "SOURCE", location: "Mumbai", color: "#8b5cf6" },
         { pubkey: "node-vendor-1", alias: "Apex Diagnostics Node", role: "DESTINATION", location: "Bangalore", color: "#10b981" },
       ],
       channels: [
@@ -41,7 +41,7 @@ describe("NovelBitcoinProtocol Component", () => {
       total_fee_ppm: 15,
       final_amount_sats: 251,
       path_nodes: [
-        { pubkey: "node-plant", alias: "AuRAG Plant Edge Gateway", role: "SOURCE", location: "Mumbai, IN" },
+        { pubkey: "node-plant", alias: "Kinetix Plant Edge Gateway", role: "SOURCE", location: "Mumbai, IN" },
         { pubkey: "node-lsp", alias: "HHGoa Regional LSP", role: "REGIONAL_LSP", location: "New Delhi, IN" },
         { pubkey: "node-hub", alias: "Industrial Peering Hub", role: "PEERING_HUB", location: "BOM-IX, Mumbai" },
         { pubkey: "node-vendor-1", alias: "Apex Diagnostics Node", role: "DESTINATION", location: "Bangalore, IN" },
@@ -50,7 +50,7 @@ describe("NovelBitcoinProtocol Component", () => {
         {
           hop_index: 1,
           from_node: "node-plant",
-          from_alias: "AuRAG Plant Edge Gateway",
+          from_alias: "Kinetix Plant Edge Gateway",
           to_node: "node-lsp",
           to_alias: "HHGoa Regional LSP",
           channel_id: "chan_source_lsp",
@@ -86,7 +86,7 @@ describe("NovelBitcoinProtocol Component", () => {
           {
             step: 1,
             phase: "FORWARD_HTLC",
-            from: "AuRAG Plant Edge Gateway",
+            from: "Kinetix Plant Edge Gateway",
             to: "HHGoa Regional LSP",
             action: "ADD_HTLC",
             cltv_expiry: 890144,

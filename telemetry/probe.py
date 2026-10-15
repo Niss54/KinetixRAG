@@ -97,7 +97,7 @@ class TelemetryHealthReport:
 
 
 class TelemetryHealthProbe:
-    """Automated health check probe for the AuRAG telemetry streaming subsystem."""
+    """Automated health check probe for the KinetixRAG telemetry streaming subsystem."""
 
     def __init__(
         self,

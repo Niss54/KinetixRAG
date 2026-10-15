@@ -1,5 +1,5 @@
 """
-Comprehensive Failure-Path Audit Test Suite for AuRAG Machine Money (Task 9.3).
+Comprehensive Failure-Path Audit Test Suite for KinetixRAG Machine Money (Task 9.3).
 Audits all 6 required failure scenarios:
 1. Provider offline / settlement failure
 2. Graph offline / Neo4j failure

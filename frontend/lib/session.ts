@@ -1,5 +1,5 @@
-const USER_KEY = "aurag.user_id";
-const SESSION_KEY = "aurag.session_id";
+const USER_KEY = "kinetix.user_id";
+const SESSION_KEY = "kinetix.session_id";
 
 function storedId(storage: Storage, key: string, prefix: string): string {
   const existing = storage.getItem(key);

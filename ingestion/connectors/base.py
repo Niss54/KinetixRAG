@@ -1,4 +1,4 @@
-"""Base classes and interfaces for AuRAG Enterprise Data Connectors."""
+"""Base classes and interfaces for KinetixRAG Enterprise Data Connectors."""
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from datetime import datetime, timezone

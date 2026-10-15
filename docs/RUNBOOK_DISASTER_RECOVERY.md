@@ -1,4 +1,4 @@
-# AuRAG Disaster Recovery & Business Continuity Runbook
+# KinetixRAG Disaster Recovery & Business Continuity Runbook
 
 ## 1. Objectives & Service Level Indicators
 * **Recovery Point Objective (RPO)**: $\le 1$ hour (maximum acceptable data loss window).
@@ -17,7 +17,7 @@
   3. ECS Fargate automatically re-provisions replacement tasks in AZ-b.
 * **Operator Verification**:
   ```bash
-  python scripts/health_probe.py --url https://aurag.plant-mumbai.internal
+  python scripts/health_probe.py --url https://kinetix.plant-mumbai.internal
   ```
 
 ---
@@ -25,17 +25,17 @@
 ### Scenario B: Accidental Bulk Corruption or Malformed Automation
 * **Symptoms**: Erroneous work orders or corrupted metadata staged across relational tables.
 * **Recovery Procedure**:
-  1. Place AuRAG into Maintenance Mode:
+  1. Place KinetixRAG into Maintenance Mode:
      ```bash
-     aws ecs update-service --cluster aurag-production-cluster --service aurag-production-backend-service --desired-count 0
+     aws ecs update-service --cluster kinetix-production-cluster --service kinetix-production-backend-service --desired-count 0
      ```
   2. Locate the most recent verified point-in-time snapshot bundle in `data/backups/` or Amazon S3:
      ```bash
-     python scripts/backup_restore.py --action verify --bundle-dir data/backups/aurag_backup_plant-mumbai-01_YYYYMMDDTHHMMSSZ
+     python scripts/backup_restore.py --action verify --bundle-dir data/backups/kinetix_backup_plant-mumbai-01_YYYYMMDDTHHMMSSZ
      ```
   3. Restore database tables from verified snapshot:
      ```bash
-     python scripts/backup_restore.py --action restore --bundle-dir data/backups/aurag_backup_plant-mumbai-01_YYYYMMDDTHHMMSSZ
+     python scripts/backup_restore.py --action restore --bundle-dir data/backups/kinetix_backup_plant-mumbai-01_YYYYMMDDTHHMMSSZ
      ```
   4. Run the automated DR verification drill to validate table row counts and SHA256 parity:
      ```bash
@@ -43,7 +43,7 @@
      ```
   5. Restart backend services:
      ```bash
-     aws ecs update-service --cluster aurag-production-cluster --service aurag-production-backend-service --desired-count 2
+     aws ecs update-service --cluster kinetix-production-cluster --service kinetix-production-backend-service --desired-count 2
      ```
 
 ---

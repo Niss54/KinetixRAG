@@ -1,12 +1,12 @@
 # 🎙️ Wispr Flow Voice-Driven Development Proofs
 
-> **Official Development Artifact**: **Wispr Flow Development Evidence & Provenance** demonstrating that the **AuRAG** platform was architected, prompted, and developed using **Wispr Flow** (Voice-to-Code Dictation & Prompt Engineering).
+> **Official Development Artifact**: **Wispr Flow Development Evidence & Provenance** demonstrating that the **KinetixRAG** platform was architected, prompted, and developed using **Wispr Flow** (Voice-to-Code Dictation & Prompt Engineering).
 
 ---
 
 ## ⚡ Executive Summary: 100% Voice-Driven Engineering Sprint
 
-During the engineering sprint for **Hacker House Goa (HHGoa)**, AuRAG was developed as an industrial cyber-physical GraphRAG intelligence platform. **100% of the platform's architectural requirements, prompt engineering directives, multi-agent state schemas, and telemetry pipelines were driven using Wispr Flow voice dictation** feeding directly into the Antigravity IDE.
+During the engineering sprint for **Hacker House Goa (HHGoa)**, KinetixRAG was developed as an industrial cyber-physical GraphRAG intelligence platform. **100% of the platform's architectural requirements, prompt engineering directives, multi-agent state schemas, and telemetry pipelines were driven using Wispr Flow voice dictation** feeding directly into the Antigravity IDE.
 
 ### 📊 Wispr Flow Voice & Engineering Metrics:
 * 🗣️ **Total Words Dictated**: **3,911+ words**

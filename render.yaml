@@ -1,5 +1,5 @@
 envVarGroups:
-  - name: aurag-runtime
+  - name: kinetix-runtime
     envVars:
       - key: PYTHONUNBUFFERED
         value: "1"
@@ -46,18 +46,18 @@ envVarGroups:
       - key: INGEST_WORK_DIR
         value: /app/.runtime/ingest-work
       - key: INGEST_S3_PREFIX
-        value: aurag-ingest
+        value: kinetix-ingest
 
 services:
   - type: web
-    name: aurag-api
+    name: kinetix-api
     runtime: docker
     dockerfilePath: ./Dockerfile
     dockerContext: .
     healthCheckPath: /api/health/live
     autoDeployTrigger: checksPass
     envVars:
-      - fromGroup: aurag-runtime
+      - fromGroup: kinetix-runtime
       - key: NEO4J_URI
         sync: false
       - key: NEO4J_USERNAME
@@ -94,14 +94,14 @@ services:
         sync: false
 
   - type: worker
-    name: aurag-telemetry
+    name: kinetix-telemetry
     runtime: docker
     dockerfilePath: ./Dockerfile
     dockerContext: .
     dockerCommand: python -m telemetry.worker
     autoDeployTrigger: checksPass
     envVars:
-      - fromGroup: aurag-runtime
+      - fromGroup: kinetix-runtime
       - key: NEO4J_URI
         sync: false
       - key: NEO4J_USERNAME
@@ -112,14 +112,14 @@ services:
         sync: false
 
   - type: worker
-    name: aurag-ingest-queue
+    name: kinetix-ingest-queue
     runtime: docker
     dockerfilePath: ./Dockerfile
     dockerContext: .
-    dockerCommand: rq worker aurag-ingest --url $REDIS_URL
+    dockerCommand: rq worker kinetix-ingest --url $REDIS_URL
     autoDeployTrigger: checksPass
     envVars:
-      - fromGroup: aurag-runtime
+      - fromGroup: kinetix-runtime
       - key: NEO4J_URI
         sync: false
       - key: NEO4J_USERNAME

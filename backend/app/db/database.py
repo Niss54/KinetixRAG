@@ -19,10 +19,10 @@ def get_default_sqlite_path() -> Path:
             test_file = candidate / ".write_test"
             test_file.touch()
             test_file.unlink()
-            return candidate / "aurag_enterprise.db"
+            return candidate / "kinetix_enterprise.db"
         except Exception:
             continue
-    return REPO_ROOT / "aurag_enterprise.db"
+    return REPO_ROOT / "kinetix_enterprise.db"
 
 DEFAULT_SQLITE_PATH = get_default_sqlite_path()
 

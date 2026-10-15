@@ -1,6 +1,6 @@
 # RAGAS Final Retrieval Quality Acceptance Gate
 
-This document records the authoritative execution of the retrieval evaluation gate across all **24 canonical ground-truth operational benchmark cases** per the AuRAG evaluation specification.
+This document records the authoritative execution of the retrieval evaluation gate across all **24 canonical ground-truth operational benchmark cases** per the KinetixRAG evaluation specification.
 
 ---
 

@@ -49,12 +49,12 @@ def _wait_for_marker(service, user_id: str, marker: str) -> list[str]:
 
 def main() -> None:
     proof_id = os.environ.get("PROOF_ID") or uuid4().hex
-    user_id = f"aurag-mem0-proof-user-{proof_id}"
-    other_user_id = f"aurag-mem0-proof-other-{proof_id}"
-    session_a = f"aurag-mem0-proof-session-a-{proof_id}"
-    session_b = f"aurag-mem0-proof-session-b-{proof_id}"
-    session_c = f"aurag-mem0-proof-session-c-{proof_id}"
-    marker = f"AURAG-MEM0-{proof_id}"
+    user_id = f"kinetix-mem0-proof-user-{proof_id}"
+    other_user_id = f"kinetix-mem0-proof-other-{proof_id}"
+    session_a = f"kinetix-mem0-proof-session-a-{proof_id}"
+    session_b = f"kinetix-mem0-proof-session-b-{proof_id}"
+    session_c = f"kinetix-mem0-proof-session-c-{proof_id}"
+    marker = f"KINETIX-MEM0-{proof_id}"
 
     memory._service = None
     chat.answer_query = _deterministic_answer
@@ -90,7 +90,7 @@ def main() -> None:
 
         recall_query = (
             "What verification marker did I provide earlier? "
-            "It begins with AURAG-MEM0."
+            "It begins with KINETIX-MEM0."
         )
         second = client.post(
             "/api/chat",

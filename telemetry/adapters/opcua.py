@@ -24,7 +24,7 @@ class OPCUATestbedAdapter(TelemetryAdapter):
     def get_provenance_metadata(self) -> Dict[str, Any]:
         return {
             "data_source_type": DataSourceType.OPCUA_TESTBED.value,
-            "dataset_name": "AuRAG OPC-UA Emulated Testbed",
+            "dataset_name": "KinetixRAG OPC-UA Emulated Testbed",
             "dataset_record_id": f"OPCUA-NODE-{self.equipment_id}",
             "source_reference": self.endpoint_url,
             "replay_mode": True,

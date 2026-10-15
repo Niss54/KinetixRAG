@@ -1,7 +1,7 @@
 """Automated test suite for Phase 2A public dataset replay adapter and synthetic generators.
 
 Verifies:
-- Schema normalization to the canonical AuRAG telemetry format
+- Schema normalization to the canonical KinetixRAG telemetry format
 - Provenance metadata preservation (dataset_name, dataset_record_id, source_reference)
 - Historical timestamp preservation
 - Invalid record and malformed schema rejection

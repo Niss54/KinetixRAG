@@ -56,13 +56,13 @@ def main() -> None:
         sys.exit(1)
     watch_dir.mkdir(parents=True, exist_ok=True)
 
-    queue = Queue("aurag-ingest", connection=Redis.from_url(redis_url))
+    queue = Queue("kinetix-ingest", connection=Redis.from_url(redis_url))
     observer = Observer()
     observer.schedule(IngestHandler(queue), str(watch_dir), recursive=False)
     observer.start()
     print(
         f"Watching {watch_dir} -> shared object storage -> "
-        f"Redis queue 'aurag-ingest' ({redis_url})"
+        f"Redis queue 'kinetix-ingest' ({redis_url})"
     )
 
     try:

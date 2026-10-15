@@ -1,4 +1,4 @@
-"""Enterprise Model Gateway for AuRAG.
+"""Enterprise Model Gateway for KinetixRAG.
 
 Provides a unified, resilient inference gateway supporting Amazon Bedrock
 (Claude 3.5 Sonnet / Haiku), Groq, Google Gemini, and deterministic Mock providers.

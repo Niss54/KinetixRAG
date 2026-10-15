@@ -36,7 +36,7 @@ resource "aws_security_group" "redis" {
 
 resource "aws_elasticache_replication_group" "redis" {
   replication_group_id = "${var.project_name}-${var.environment}-redis"
-  description          = "Redis cluster for AuRAG session cache and rate limits"
+  description          = "Redis cluster for KinetixRAG session cache and rate limits"
   node_type            = var.redis_node_type
   num_cache_clusters   = 2
   port                 = 6379

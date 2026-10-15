@@ -1,6 +1,6 @@
 """Synthetic Telemetry Adapter (Phase 2A).
 
-Wraps AuRAG's mathematical signature-drift generator for deterministic demonstration
+Wraps KinetixRAG's mathematical signature-drift generator for deterministic demonstration
 and local CI testing with explicit SYNTHETIC_GENERATOR provenance labeling.
 """
 import uuid
@@ -22,7 +22,7 @@ class SyntheticTelemetryAdapter(TelemetryAdapter):
     def get_provenance_metadata(self) -> Dict[str, Any]:
         return {
             "data_source_type": DataSourceType.SYNTHETIC_GENERATOR.value,
-            "dataset_name": "AuRAG Synthetic Industrial Generator",
+            "dataset_name": "KinetixRAG Synthetic Industrial Generator",
             "dataset_record_id": f"SYNTH-{self.equipment_tag}-{uuid.uuid4().hex[:6].upper()}",
             "source_reference": "telemetry/generator.py",
             "replay_mode": False,

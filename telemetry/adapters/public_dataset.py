@@ -1,7 +1,7 @@
 """Public Industrial Dataset Replay Adapter (Phase 2A).
 
 Consumes authentic, published run-to-failure condition-monitoring data
-(NASA IMS Bearing Dataset) and normalizes it into AuRAG's telemetry schema
+(NASA IMS Bearing Dataset) and normalizes it into KinetixRAG's telemetry schema
 with rigorous provenance tracking and honest UI labeling.
 """
 import json
@@ -64,7 +64,7 @@ class PublicDatasetReplayAdapter(TelemetryAdapter):
         return [r.get("record_id") for r in self._data.get("records", []) if r.get("record_id")]
 
     def normalize_reading(self, raw_record: Dict[str, Any]) -> Dict[str, Any]:
-        """Normalize raw NASA record into standard AuRAG telemetry format."""
+        """Normalize raw NASA record into standard KinetixRAG telemetry format."""
         if "vibration_mm_s" not in raw_record and "vibration_rms_g" not in raw_record:
             raise ValueError("Malformed record: missing vibration features")
 

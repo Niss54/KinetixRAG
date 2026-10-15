@@ -1,4 +1,4 @@
-"""Machine Money package for AuRAG: Autonomous industrial Bitcoin/Lightning settlement."""
+"""Machine Money package for KinetixRAG: Autonomous industrial Bitcoin/Lightning settlement."""
 from backend.app.services.machine_money.schemas import (
     PaymentStatus,
     ProviderHealth,

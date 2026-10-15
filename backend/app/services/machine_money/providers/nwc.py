@@ -1,4 +1,4 @@
-"""NIP-47-inspired NWC Provider (experimental simulation) for AuRAG.
+"""NIP-47-inspired NWC Provider (experimental simulation) for KinetixRAG.
 
 Implements the abstract LightningProvider interface using NIP-47-compatible
 event structures in local loopback mode. This is a stretch-goal simulation;

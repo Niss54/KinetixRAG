@@ -40,7 +40,7 @@ from backend.app.db.database import init_db
 # Initialize relational tables
 init_db()
 
-app = FastAPI(title="AuRAG Operator Console API")
+app = FastAPI(title="KinetixRAG Operator Console API")
 
 
 def cors_origins() -> list[str]:
@@ -78,7 +78,7 @@ async def add_security_headers(request: Request, call_next):
 
 @app.get("/")
 def root():
-    return {"status": "ok", "service": "AuRAG Operator Console API"}
+    return {"status": "ok", "service": "KinetixRAG Operator Console API"}
 
 
 @app.exception_handler(HTTPException)

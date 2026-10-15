@@ -1,9 +1,9 @@
-# AuRAG — Claim-to-Evidence Verification Matrix
+# KinetixRAG — Claim-to-Evidence Verification Matrix
 **Authoritative Claims Audit for Hacker House Goa (HHGoa)**
 
 - **Document ID:** `DOC-CLAIM-MATRIX-2026-10-02`
 - **Audit Date:** 2026-10-02
-- **Rule Compliance:** Non-negotiable truthfulness rule (Section 0.1 of `AuRAG_FINAL_PRD.md`)
+- **Rule Compliance:** Non-negotiable truthfulness rule (Section 0.1 of `KINETIXRAG_FINAL_PRD.md`)
 - **Scope:** Every material technical claim in `README.md`, UI, and demo documentation mapped to exact files, automated tests, environment scope, and permitted wording.
 
 ---
@@ -35,6 +35,6 @@
 Each row in this matrix was independently verified against:
 1. **Source Code:** Inspection of function definitions and docstrings in `backend/app`, `services/`, and `frontend/components`.
 2. **Automated Tests:** Execution via `pytest` (126 verified unit & integration tests across backend, retrieval, agents, and telemetry).
-3. **Documentation:** Regular expression audits of `README.md` and `AuRAG_FINAL_PRD.md` to ensure prohibited terms are absent.
+3. **Documentation:** Regular expression audits of `README.md` and `KINETIXRAG_FINAL_PRD.md` to ensure prohibited terms are absent.
 
 **Audit Sign-Off:** All 15 core claims comply with Section 0.1 (Truthfulness) rules.

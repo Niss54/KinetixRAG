@@ -1,4 +1,4 @@
-# AuRAG Acceptance Report
+# KinetixRAG Acceptance Report
 
 > [!WARNING]
 > **HISTORICAL VERIFICATION SNAPSHOT — NOT THE CURRENT RELEASE STATE**
@@ -12,7 +12,7 @@
 
 **Environment:** local Windows host plus Linux Docker  
 **Historical Snapshot Date:** October 5, 2026  
-**Acceptance image:** `aurag:acceptance`
+**Acceptance image:** `kinetix:acceptance`
 
 ## Passed gates
 
@@ -51,7 +51,7 @@ npm.cmd --prefix frontend run test:e2e
 npm.cmd --prefix frontend run test:e2e:live
 npm.cmd --prefix frontend audit --omit=dev
 
-docker build -t aurag:acceptance .
+docker build -t kinetix:acceptance .
 
 powershell.exe -NoProfile -ExecutionPolicy Bypass `
   -File .\scripts\smoke.ps1 -BaseUrl http://localhost:8000 `
@@ -67,14 +67,14 @@ docker run --rm --env-file .env `
   -e GROQ_JUDGE_MODEL=openai/gpt-oss-20b `
   -e NEO4J_URI=bolt://host.docker.internal:7687 `
   -e NEO4J_USERNAME=neo4j `
-  -e NEO4J_PASSWORD=aurag-local-password `
+  -e NEO4J_PASSWORD=kinetix-local-password `
   -e NEO4J_DATABASE=neo4j `
   -e REDIS_URL=redis://host.docker.internal:6379/0 `
   -e QDRANT_URL=http://host.docker.internal:6333 `
   -e RAGAS_CASE_MAX_RETRIES=6 `
   -e RAGAS_CASE_MAX_RETRY_DELAY_SECONDS=900 `
-  -v aurag_acceptance_hf_cache:/home/aurag/.cache/huggingface `
-  aurag:acceptance python -m evaluation.validate_ragas
+  -v kinetix_acceptance_hf_cache:/home/kinetix/.cache/huggingface `
+  kinetix:acceptance python -m evaluation.validate_ragas
 ```
 
 The validator fails on any provider error, missing score, or metric below

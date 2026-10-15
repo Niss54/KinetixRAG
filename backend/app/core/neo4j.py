@@ -1105,7 +1105,7 @@ def check_neo4j_health() -> dict:
             "connected": True,
             "mode": "STANDALONE_LOCAL",
             "database": "sqlite_in_memory",
-            "uri": "sqlite://aurag_enterprise.db",
+            "uri": "sqlite://kinetix_enterprise.db",
             "detail": "Zero-failure Standalone Engine Active (Local SQLite / In-Memory Graph). Zero remote network latency.",
             "fallback_active": False,
         }

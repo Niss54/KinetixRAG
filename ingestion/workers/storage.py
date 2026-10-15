@@ -87,7 +87,7 @@ class S3ObjectStore:
         self.bucket = os.environ.get("INGEST_S3_BUCKET", "")
         if not self.bucket:
             raise RuntimeError("INGEST_S3_BUCKET is required for s3 ingestion storage")
-        self.prefix = os.environ.get("INGEST_S3_PREFIX", "aurag-ingest").strip("/")
+        self.prefix = os.environ.get("INGEST_S3_PREFIX", "kinetix-ingest").strip("/")
         self.client = boto3.client(
             "s3",
             endpoint_url=os.environ.get("INGEST_S3_ENDPOINT") or None,

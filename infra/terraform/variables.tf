@@ -13,7 +13,7 @@ variable "environment" {
 variable "project_name" {
   description = "Project namespace"
   type        = string
-  default     = "aurag"
+  default     = "kinetix"
 }
 
 variable "site_id" {
@@ -61,13 +61,13 @@ variable "db_instance_class" {
 variable "db_name" {
   description = "PostgreSQL database name"
   type        = string
-  default     = "aurag_enterprise"
+  default     = "kinetix_enterprise"
 }
 
 variable "db_username" {
   description = "PostgreSQL master username"
   type        = string
-  default     = "aurag_admin"
+  default     = "kinetix_admin"
   sensitive   = true
 }
 
@@ -92,5 +92,5 @@ variable "entra_tenant_id" {
 variable "entra_client_id" {
   description = "Microsoft Entra ID Application Client ID"
   type        = string
-  default     = "aurag-enterprise-app"
+  default     = "kinetix-enterprise-app"
 }

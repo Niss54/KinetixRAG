@@ -218,11 +218,11 @@
   background: color-mix(in oklch, var(--primary) 32%, transparent);
 }
 
-.aurag-grid {
+.kinetix-grid {
   position: relative;
 }
 
-.aurag-grid::before {
+.kinetix-grid::before {
   position: absolute;
   inset: 0 0 auto;
   height: 40rem;

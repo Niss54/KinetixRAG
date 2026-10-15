@@ -152,7 +152,7 @@ def publish_event(event_id: str) -> None:
             socket_timeout=0.2,
         )
         r.publish(
-            "aurag:predictive-events",
+            "kinetix:predictive-events",
             event_id,
         )
     except Exception as exc:

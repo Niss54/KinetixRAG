@@ -72,5 +72,5 @@ class TelemetryAdapter(ABC):
 
     @abstractmethod
     def normalize_reading(self, raw_data: Dict[str, Any]) -> Dict[str, Any]:
-        """Normalize raw incoming payload into standard AuRAG telemetry schema."""
+        """Normalize raw incoming payload into standard KinetixRAG telemetry schema."""
         pass

@@ -60,15 +60,15 @@ export default function AppSidebar({ readiness }: { readiness: ReadinessResponse
           <SidebarMenuItem>
             <SidebarMenuButton
               size="lg"
-              tooltip="AuRAG Autonomous Machine Money"
+              tooltip="KinetixRAG Industrial Platform"
               render={<Link href="/" onClick={closeMobileSidebar} />}
             >
               <div className="grid size-8 shrink-0 place-items-center rounded-lg bg-amber-500 font-heading font-bold text-slate-950">
                 ⚡
               </div>
               <div className="flex min-w-0 flex-col items-start group-data-[collapsible=icon]:hidden">
-                <span className="font-heading text-base font-semibold tracking-tight">AuRAG</span>
-                <span className="truncate text-xs text-muted-foreground">Autonomous Machine Money</span>
+                <span className="font-heading text-base font-semibold tracking-tight">KinetixRAG</span>
+                <span className="truncate text-xs text-muted-foreground">Industrial GraphRAG</span>
               </div>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -167,7 +167,7 @@ export default function AppSidebar({ readiness }: { readiness: ReadinessResponse
           </div>
         </div>
         <div className="flex items-center justify-between px-2.5 pt-2 pb-1 text-[10px] text-muted-foreground/80 group-data-[collapsible=icon]:hidden font-mono border-t border-border/40">
-          <span>AuRAG</span>
+          <span>KinetixRAG</span>
           <span className="text-amber-500 font-semibold">HHGoa 2026</span>
         </div>
       </SidebarFooter>

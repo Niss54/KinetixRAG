@@ -357,7 +357,7 @@ export default function MachineMoneyPage() {
               </Badge>
             </div>
             <p className="text-[11px] text-muted-foreground mt-0.5">
-              AuRAG replaces fictional synthetic drift with authentic run-to-failure condition monitoring from the University of Cincinnati / NASA Ames Research Center.
+              KinetixRAG replaces fictional synthetic drift with authentic run-to-failure condition monitoring from the University of Cincinnati / NASA Ames Research Center.
             </p>
           </div>
         </div>
@@ -1259,7 +1259,7 @@ RETURN eq.tag_id, evt.event_id, wo.id, p.amount_sats, sp.provider_id`}
                 </span>
                 <p className="text-xs leading-relaxed text-muted-foreground">
                   {trail?.explanation ||
-                    "This payment represents an autonomous M2M diagnostic compute fee & emergency 4-hr SLA reservation. High-confidence vibration anomaly (5.42 mm/s on Slurry Pump P-101A) matched failure signature FE-001 in AuRAG's operational ontology, automatically generating Work Order WO-2026-P101. The transaction was verified against spending policy POL-LIGHTNING-MACHINE-MONEY (250 sats <= 500 sat cap) and settled instantaneously over the Lightning Network."}
+                    "This payment represents an autonomous M2M diagnostic compute fee & emergency 4-hr SLA reservation. High-confidence vibration anomaly (5.42 mm/s on Slurry Pump P-101A) matched failure signature FE-001 in KinetixRAG's operational ontology, automatically generating Work Order WO-2026-P101. The transaction was verified against spending policy POL-LIGHTNING-MACHINE-MONEY (250 sats <= 500 sat cap) and settled instantaneously over the Lightning Network."}
                 </p>
               </div>
 

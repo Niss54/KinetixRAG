@@ -48,7 +48,7 @@ def test_create_draft_persists_equipment_and_predictive_event_links():
         event_id="PE-1",
         description="Bearing pattern match",
         recommended_action="Lubricate and inspect bearing.",
-        actor="aurag",
+        actor="kinetix",
         created_at="2026-10-04T12:00:00+00:00",
     )
 

@@ -31,7 +31,7 @@ class SiteContext(BaseModel):
     for an authenticated request."""
     user_id: str = "local-operator"
     site_id: str = "plant-mumbai-01"
-    organization_id: str = "aurag-industrial"
+    organization_id: str = "kinetix-industrial"
     roles: list[str] = Field(default_factory=lambda: ["PlantOperator"])
     clearance_level: ClearanceLevel = ClearanceLevel.INTERNAL
     email: str | None = None
@@ -73,7 +73,7 @@ def get_site_context(request: Request) -> SiteContext:
     # Dev/fallback behavior: check header overrides or use defaults
     site_id = request.headers.get("X-Site-ID", "plant-mumbai-01")
     user_id = request.headers.get("X-User-ID", "local-operator")
-    org_id = request.headers.get("X-Organization-ID", "aurag-industrial")
+    org_id = request.headers.get("X-Organization-ID", "kinetix-industrial")
 
     ctx = SiteContext(
         user_id=user_id,

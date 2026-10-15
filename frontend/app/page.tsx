@@ -117,7 +117,7 @@ export default function CommandCenterPage() {
             </h1>
 
             <p className="mt-4 max-w-2xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
-              AuRAG equips mission-critical industrial assets with sovereign Bitcoin Lightning wallets (BOLT-11 / Nostr NIP-47 NWC).
+              KinetixRAG equips mission-critical industrial assets with sovereign Bitcoin Lightning wallets (BOLT-11 / Nostr NIP-47 NWC).
               When empirical sensors detect imminent failure, the machine autonomously verifies warranty and SOPs via GraphRAG,
               solicits competitive vendor bids, and settles emergency repairs in satoshis — with zero human latency and 100% cryptographic auditability.
             </p>

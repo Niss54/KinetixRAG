@@ -10,7 +10,7 @@ _SAFETY_BYPASS_PATTERNS = [
 ]
 
 _SAFETY_REFUSAL_MESSAGE = (
-    "SAFETY GUARDRAIL VIOLATION: AuRAG is strictly prohibited from providing guidance "
+    "SAFETY GUARDRAIL VIOLATION: KinetixRAG is strictly prohibited from providing guidance "
     "or instructions to bypass, jumper, or defeat Emergency Shutdown (ESD) interlocks, "
     "Pressure Safety Valves (PSVs), or toxic/fire protection systems. All protective system "
     "modifications require a signed Management of Change (MOC) under OISD-156 and OSHA 1910.119."

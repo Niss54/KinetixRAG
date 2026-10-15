@@ -44,7 +44,7 @@ def test_document_upload_stores_and_queues_object_reference(monkeypatch, tmp_pat
 
     assert result["status"] == "queued"
     assert result["job_id"] == "ingest-abc"
-    assert calls["queue_name"] == "aurag-ingest"
+    assert calls["queue_name"] == "kinetix-ingest"
     assert calls["reference"]["filename"] == "record.txt"
     assert calls["kwargs"]["job_id"].startswith("ingest-")
 

@@ -550,7 +550,7 @@ export function JudgeMode({ onExecutionComplete, className = "" }: JudgeModeProp
           </div>
 
           <p className="text-xs text-muted-foreground leading-relaxed">
-            AuRAG evaluates a representative preprocessed replay derived from NASA IMS (Rexnord ZA-2115 double-row bearings running continuously at 2,000 RPM under 6,000 lbs radial load, sampled at 20 kHz by PCB 353B33 accelerometers) providing a realistic physical anomaly baseline.
+            KinetixRAG evaluates a representative preprocessed replay derived from NASA IMS (Rexnord ZA-2115 double-row bearings running continuously at 2,000 RPM under 6,000 lbs radial load, sampled at 20 kHz by PCB 353B33 accelerometers) providing a realistic physical anomaly baseline.
           </p>
 
           {/* 5-Stage Progression Breakdown */}

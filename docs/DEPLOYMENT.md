@@ -1,6 +1,6 @@
-# AuRAG Deployment
+# KinetixRAG Deployment
 
-AuRAG deploys as a FastAPI Docker service and background workers on Render,
+KinetixRAG deploys as a FastAPI Docker service and background workers on Render,
 with the Next.js frontend on Vercel. Neo4j, Qdrant, Redis, Groq, Gemini,
 mem0, Cohere, Google Vision, and S3-compatible ingestion storage are managed
 dependencies.
@@ -41,7 +41,7 @@ Optional workers:
 ```powershell
 .\.venv\Scripts\python.exe -m telemetry.worker
 .\.venv\Scripts\python.exe -m ingestion.workers.watcher
-.\.venv\Scripts\rq.exe worker aurag-ingest
+.\.venv\Scripts\rq.exe worker kinetix-ingest
 ```
 
 The Watchdog process is for local/shared-folder operation. In managed cloud
@@ -52,13 +52,13 @@ service filesystems are not treated as a shared upload directory.
 ## Container
 
 ```powershell
-docker build -t aurag:acceptance .
+docker build -t kinetix:acceptance .
 
 docker run --rm -p 8000:8000 --env-file .env `
   -e NEO4J_URI=bolt://host.docker.internal:7687 `
   -e QDRANT_URL=http://host.docker.internal:6333 `
   -e REDIS_URL=redis://host.docker.internal:6379/0 `
-  aurag:acceptance
+  kinetix:acceptance
 ```
 
 The image uses Python 3.12, runs as an unprivileged user, includes Tesseract,
@@ -68,9 +68,9 @@ excludes `.env`, and exposes `/api/health/live` as its process health check.
 
 `render.yaml` defines:
 
-- `aurag-api`: FastAPI web service;
-- `aurag-telemetry`: proactive telemetry worker;
-- `aurag-ingest-queue`: RQ ingestion worker.
+- `kinetix-api`: FastAPI web service;
+- `kinetix-telemetry`: proactive telemetry worker;
+- `kinetix-ingest-queue`: RQ ingestion worker.
 
 Required `sync: false` values:
 

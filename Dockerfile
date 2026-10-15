@@ -30,26 +30,26 @@ RUN apt-get update \
         libgomp1 \
         tesseract-ocr \
     && rm -rf /var/lib/apt/lists/* \
-    && useradd --create-home --uid 10001 --shell /usr/sbin/nologin aurag
+    && useradd --create-home --uid 10001 --shell /usr/sbin/nologin kinetix
 
 WORKDIR /app
 
 COPY --from=builder /opt/venv /opt/venv
-COPY --from=builder --chown=aurag:aurag /root/.cache/huggingface /app/.cache/huggingface
+COPY --from=builder --chown=kinetix:kinetix /root/.cache/huggingface /app/.cache/huggingface
 
-COPY --chown=aurag:aurag agents agents
-COPY --chown=aurag:aurag backend backend
-COPY --chown=aurag:aurag data data
-COPY --chown=aurag:aurag evaluation evaluation
-COPY --chown=aurag:aurag infra infra
-COPY --chown=aurag:aurag ingestion ingestion
-COPY --chown=aurag:aurag retrieval retrieval
-COPY --chown=aurag:aurag telemetry telemetry
+COPY --chown=kinetix:kinetix agents agents
+COPY --chown=kinetix:kinetix backend backend
+COPY --chown=kinetix:kinetix data data
+COPY --chown=kinetix:kinetix evaluation evaluation
+COPY --chown=kinetix:kinetix infra infra
+COPY --chown=kinetix:kinetix ingestion ingestion
+COPY --chown=kinetix:kinetix retrieval retrieval
+COPY --chown=kinetix:kinetix telemetry telemetry
 
 RUN mkdir -p /app/data/incoming /app/.runtime/mem0 \
-    && chown -R aurag:aurag /app
+    && chown -R kinetix:kinetix /app
 
-USER aurag
+USER kinetix
 
 EXPOSE 10000
 

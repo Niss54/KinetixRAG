@@ -65,7 +65,7 @@ function Assert-Python312 {
     )
     $version = & $FilePath @Arguments -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')"
     if ($LASTEXITCODE -ne 0 -or $version.Trim() -ne "3.12") {
-        throw "AuRAG requires Python 3.12; detected '$version'."
+        throw "KinetixRAG requires Python 3.12; detected '$version'."
     }
 }
 
@@ -128,7 +128,7 @@ try {
         }
         $nodeVersion = (& node --version).TrimStart("v").Split(".")
         if ($LASTEXITCODE -ne 0 -or [int]$nodeVersion[0] -lt 22) {
-            throw "AuRAG requires Node.js 22 or newer."
+            throw "KinetixRAG requires Node.js 22 or newer."
         }
         Invoke-External -FilePath $npm.Source -Arguments @("--prefix", "frontend", "ci")
     }

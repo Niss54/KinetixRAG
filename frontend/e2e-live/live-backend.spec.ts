@@ -14,7 +14,7 @@ test("desktop investigation uses the real API and renders graph evidence", async
   await page.getByRole("button", { name: "Send question" }).click();
 
   await expect(
-    page.getByText("AuRAG agent", { exact: true }),
+    page.getByText("Kinetix agent", { exact: true }),
   ).toBeVisible({ timeout: 120_000 });
   await expect(
     page.getByRole("button", { name: /FE-001|WO-1002/ }).first(),

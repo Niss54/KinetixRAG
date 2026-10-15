@@ -1,4 +1,4 @@
-# Unified AuRAG runtime installation.
+# Unified KinetixRAG runtime installation.
 -r ingestion/requirements.txt
 -r retrieval/requirements.txt
 -r agents/requirements.txt

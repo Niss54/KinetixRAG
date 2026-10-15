@@ -1,4 +1,4 @@
-"""NIP-47 Nostr Wallet Connect module for AuRAG Machine Money.
+"""NIP-47 Nostr Wallet Connect module for KinetixRAG Machine Money.
 
 Implements standards-compliant NIP-47 data structures, BIP-340 Schnorr signatures,
 and event lifecycle.
@@ -422,7 +422,7 @@ class NWCClient:
             "relay": self.config.relay_url,
             "wallet_pubkey": self.config.wallet_pubkey,
             "client_pubkey": self.config.client_pubkey,
-            "lud16": self.config.lud16 or "aurag-agent@hhgoa.org",
+            "lud16": self.config.lud16 or "kinetix-agent@hhgoa.org",
             "supported_methods": ["pay_invoice", "get_balance", "get_info", "make_invoice"],
             "notifications": ["payment_received", "payment_sent"],
             "status": "CONNECTED",

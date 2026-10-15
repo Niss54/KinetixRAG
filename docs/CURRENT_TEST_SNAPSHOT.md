@@ -1,4 +1,4 @@
-# AuRAG — Canonical Test Suite & Verification Snapshot
+# KinetixRAG — Canonical Test Suite & Verification Snapshot
 
 **Document ID:** `DOC-TEST-SNAPSHOT-2026-10-10`\
 **Target Event:** Hacker House Goa (HHGoa) 2026\

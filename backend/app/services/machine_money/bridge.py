@@ -1,6 +1,6 @@
 """Telemetry-to-Payment Bridge & Agent Action Boundary (Sections 16 - 18).
 
-Connects AuRAG's existing predictive intelligence, failure matching, and GraphRAG
+Connects KinetixRAG's existing predictive intelligence, failure matching, and GraphRAG
 evidence retrieval into the autonomous Lightning micro-settlement layer.
 """
 import json

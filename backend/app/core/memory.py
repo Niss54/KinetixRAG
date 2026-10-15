@@ -114,7 +114,7 @@ class MemoryService:
                 user_id=user_id,
                 run_id=session_id,
                 metadata={
-                    "source": "aurag_chat",
+                    "source": "kinetix_chat",
                     "session_id": session_id,
                     "expires_at": expires_at,
                 },

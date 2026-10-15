@@ -1,6 +1,6 @@
 # Historical Product Requirements Archive
 
-This directory contains the historical, phase-by-phase Product Requirements Documents (PRDs) generated during the development cycles of AuRAG for Hacker House Goa (HHGoa).
+This directory contains the historical, phase-by-phase Product Requirements Documents (PRDs) generated during the development cycles of KinetixRAG for Hacker House Goa (HHGoa).
 
 These files are preserved strictly for **auditability, commit trail provenance, and technical historical reference**.
 
@@ -21,7 +21,7 @@ For judges and developers reviewing the current, hardened system architecture an
 | File | Historical Phase | Scope & Purpose |
 |:-----|:-----------------|:----------------|
 | [**PRD.md**](./PRD.md) | Phase 1 (Baseline) | Initial industrial intelligence and autonomous RAG foundation specification. |
-| [**AuRAG_FINAL_PRD.md**](./AuRAG_FINAL_PRD.md) | Consolidated Execution Roadmap | Comprehensive milestone checklist tracking phased gate completions. |
+| [**KINETIXRAG_FINAL_PRD.md**](./KINETIXRAG_FINAL_PRD.md) | Consolidated Execution Roadmap | Comprehensive milestone checklist tracking phased gate completions. |
 
 ---
 

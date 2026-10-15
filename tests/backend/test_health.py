@@ -71,11 +71,11 @@ def test_cors_origins_are_read_from_environment(monkeypatch):
 
     monkeypatch.setenv(
         "BACKEND_CORS_ORIGINS",
-        "https://aurag.example, https://preview.example/ ",
+        "https://kinetix.example, https://preview.example/ ",
     )
 
     assert main.cors_origins() == [
-        "https://aurag.example",
+        "https://kinetix.example",
         "https://preview.example",
     ]
 

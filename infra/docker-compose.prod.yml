@@ -3,25 +3,25 @@ version: "3.8"
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: aurag-prod-postgres
+    container_name: kinetix-prod-postgres
     restart: always
     environment:
-      POSTGRES_DB: aurag_enterprise
-      POSTGRES_USER: aurag_admin
+      POSTGRES_DB: kinetix_enterprise
+      POSTGRES_USER: kinetix_admin
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U aurag_admin -d aurag_enterprise"]
+      test: ["CMD-SHELL", "pg_isready -U kinetix_admin -d kinetix_enterprise"]
       interval: 10s
       timeout: 5s
       retries: 5
 
   redis:
     image: redis:7-alpine
-    container_name: aurag-prod-redis
+    container_name: kinetix-prod-redis
     restart: always
     ports:
       - "6379:6379"
@@ -35,7 +35,7 @@ services:
 
   neo4j:
     image: neo4j:5.26-community
-    container_name: aurag-prod-neo4j
+    container_name: kinetix-prod-neo4j
     restart: always
     environment:
       NEO4J_AUTH: neo4j/${NEO4J_PASSWORD}
@@ -53,7 +53,7 @@ services:
 
   qdrant:
     image: qdrant/qdrant:v1.12.0
-    container_name: aurag-prod-qdrant
+    container_name: kinetix-prod-qdrant
     restart: always
     ports:
       - "6333:6333"
@@ -69,7 +69,7 @@ services:
     build:
       context: ..
       dockerfile: infra/Dockerfile.backend
-    container_name: aurag-prod-backend
+    container_name: kinetix-prod-backend
     restart: always
     depends_on:
       postgres:
@@ -77,7 +77,7 @@ services:
       redis:
         condition: service_healthy
     environment:
-      DATABASE_URL: postgresql://aurag_admin:${POSTGRES_PASSWORD}@postgres:5432/aurag_enterprise
+      DATABASE_URL: postgresql://kinetix_admin:${POSTGRES_PASSWORD}@postgres:5432/kinetix_enterprise
       REDIS_HOST: redis
       REDIS_PORT: 6379
       LLM_PROVIDER: bedrock
@@ -91,7 +91,7 @@ services:
     build:
       context: ..
       dockerfile: infra/Dockerfile.frontend
-    container_name: aurag-prod-frontend
+    container_name: kinetix-prod-frontend
     restart: always
     depends_on:
       - backend

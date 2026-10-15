@@ -1,4 +1,4 @@
-"""AuRAG Industrial Telemetry & Condition-Monitoring Subsystem."""
+"""KinetixRAG Industrial Telemetry & Condition-Monitoring Subsystem."""
 
 from telemetry.probe import (
     ISO_10816_ZONE_C_THRESHOLD_MMS,

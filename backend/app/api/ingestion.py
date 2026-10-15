@@ -37,7 +37,7 @@ async def enqueue_document(
         store = get_object_store()
         reference = store.put_bytes(content, safe_filename(filename))
         queue = Queue(
-            "aurag-ingest",
+            "kinetix-ingest",
             connection=Redis.from_url(
                 os.environ.get("REDIS_URL", "redis://localhost:6379")
             ),

@@ -1,4 +1,4 @@
-# AuRAG Five-Minute Demo
+# KinetixRAG Five-Minute Demo
 
 ## Preflight
 
@@ -79,7 +79,7 @@ Open Evaluation. Show:
 
 ## 4:45–5:00 — Close
 
-“AuRAG is not another chat wrapper. It turns fragmented operational records
+“KinetixRAG is not another chat wrapper. It turns fragmented operational records
 into connected, cited, measurable, and actionable plant intelligence.”
 
 End on the Command Center or the accepted work order.

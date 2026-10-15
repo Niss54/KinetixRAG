@@ -15,8 +15,8 @@ describe("getChatIdentity", () => {
 
     expect(first).toEqual({ userId: "operator-user-1", sessionId: "session-session-1" });
     expect(second).toEqual(first);
-    expect(localStorage.getItem("aurag.user_id")).toBe("operator-user-1");
-    expect(sessionStorage.getItem("aurag.session_id")).toBe("session-session-1");
+    expect(localStorage.getItem("kinetix.user_id")).toBe("operator-user-1");
+    expect(sessionStorage.getItem("kinetix.session_id")).toBe("session-session-1");
   });
 });
 

@@ -4,8 +4,8 @@ import AppShell from "@/components/AppShell";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 export const metadata: Metadata = {
-  title: "AuRAG | Autonomous Machine Money Protocol",
-  description: "Industrial machines holding sovereign Bitcoin Lightning wallets (BOLT-11 / Nostr NWC), executing autonomous vendor payments grounded in deterministic GraphRAG evidence.",
+  title: "KinetixRAG | High-Frequency Telemetry & Dynamic Industrial GraphRAG",
+  description: "Autonomous industrial intelligence platform bridging high-frequency vibration telemetry, deterministic GraphRAG root-cause analysis, and self-healing operational workflows.",
 };
 
 export default function RootLayout({

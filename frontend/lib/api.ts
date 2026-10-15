@@ -236,7 +236,7 @@ const SEED_WORK_ORDERS: Record<string, WorkOrderRecord> = {
 function getLocalWorkOrders(): Record<string, WorkOrderRecord> {
   if (typeof window === "undefined") return { ...SEED_WORK_ORDERS };
   try {
-    const raw = localStorage.getItem("aurag_work_orders_cache");
+    const raw = localStorage.getItem("kinetix_work_orders_cache");
     if (raw) return { ...SEED_WORK_ORDERS, ...JSON.parse(raw) };
   } catch {}
   return { ...SEED_WORK_ORDERS };
@@ -247,7 +247,7 @@ function saveLocalWorkOrder(wo: WorkOrderRecord) {
   try {
     const current = getLocalWorkOrders();
     current[wo.id] = wo;
-    localStorage.setItem("aurag_work_orders_cache", JSON.stringify(current));
+    localStorage.setItem("kinetix_work_orders_cache", JSON.stringify(current));
   } catch {}
 }
 
@@ -848,7 +848,7 @@ const DEFAULT_MACHINE_MONEY_HEALTH: MachineMoneyHealth = {
 };
 
 const DEFAULT_PROVIDERS: ProviderRegistryResponse = {
-  registry_title: "AuRAG Machine Money Provider Registry",
+  registry_title: "KinetixRAG Machine Money Provider Registry",
   disclosure: "Demonstration synthetic registry for Hacker House Goa (HHGoa)",
   total_services: 1,
   total_providers: 1,
@@ -999,7 +999,7 @@ export async function triggerMachineMoneyFromTelemetry(payload: {
 
   if (typeof window !== "undefined") {
     try {
-      const stored = JSON.parse(localStorage.getItem("aurag_m2m_payments") || "[]");
+      const stored = JSON.parse(localStorage.getItem("kinetix_m2m_payments") || "[]");
       stored.unshift({
         payment_id: paymentId,
         amount_sats: 250,
@@ -1017,7 +1017,7 @@ export async function triggerMachineMoneyFromTelemetry(payload: {
         created_at: new Date().toISOString(),
         paid_at: new Date().toISOString(),
       });
-      localStorage.setItem("aurag_m2m_payments", JSON.stringify(stored.slice(0, 30)));
+      localStorage.setItem("kinetix_m2m_payments", JSON.stringify(stored.slice(0, 30)));
     } catch {}
   }
 
@@ -1158,7 +1158,7 @@ export async function listMachineMoneyPayments(limit: number = 20): Promise<any[
 
   if (typeof window !== "undefined") {
     try {
-      const local = JSON.parse(localStorage.getItem("aurag_m2m_payments") || "[]");
+      const local = JSON.parse(localStorage.getItem("kinetix_m2m_payments") || "[]");
       if (local && local.length > 0) return [...local, ...SEED_PAYMENTS].slice(0, limit);
     } catch {}
   }
@@ -2215,7 +2215,7 @@ export async function getNWCInfo(uri?: string): Promise<NWCInfoResponse> {
     wallet_pubkey: "02" + "e1".repeat(32),
     client_pubkey: "03" + "c2".repeat(32),
     relays: ["wss://relay.damus.io", "wss://nos.lol"],
-    lud16: "plant-mumbai@aurag.network",
+    lud16: "plant-mumbai@kinetix.network",
     methods_supported: ["pay_invoice", "get_balance", "make_invoice", "lookup_invoice"],
     max_autonomous_spend_sats: 500,
     encryption: "NIP-04 ECDH AES-256-CBC",
@@ -2245,7 +2245,7 @@ export async function executeNWCPayment(payload: {
       const data = await res.json();
       if (typeof window !== "undefined") {
         try {
-          const stored = JSON.parse(localStorage.getItem("aurag_m2m_payments") || "[]");
+          const stored = JSON.parse(localStorage.getItem("kinetix_m2m_payments") || "[]");
           stored.unshift({
             payment_id: `PAY-NWC-${Date.now().toString(36).toUpperCase()}`,
             amount_sats: data.amount_sats || payload.amount_sats || 250,
@@ -2263,7 +2263,7 @@ export async function executeNWCPayment(payload: {
             created_at: data.settled_at || new Date().toISOString(),
             paid_at: data.settled_at || new Date().toISOString(),
           });
-          localStorage.setItem("aurag_m2m_payments", JSON.stringify(stored.slice(0, 30)));
+          localStorage.setItem("kinetix_m2m_payments", JSON.stringify(stored.slice(0, 30)));
         } catch {}
       }
       return data;
@@ -2277,7 +2277,7 @@ export async function executeNWCPayment(payload: {
 
   if (typeof window !== "undefined") {
     try {
-      const stored = JSON.parse(localStorage.getItem("aurag_m2m_payments") || "[]");
+      const stored = JSON.parse(localStorage.getItem("kinetix_m2m_payments") || "[]");
       stored.unshift({
         payment_id: paymentId,
         amount_sats: amt,
@@ -2295,7 +2295,7 @@ export async function executeNWCPayment(payload: {
         created_at: new Date().toISOString(),
         paid_at: new Date().toISOString(),
       });
-      localStorage.setItem("aurag_m2m_payments", JSON.stringify(stored.slice(0, 30)));
+      localStorage.setItem("kinetix_m2m_payments", JSON.stringify(stored.slice(0, 30)));
     } catch {}
   }
 
@@ -2338,7 +2338,7 @@ export async function getRoutingTopology(): Promise<RoutingTopologyResponse> {
 
   return {
     nodes: [
-      { pubkey: "02" + "01".repeat(32), alias: "AuRAG Plant Mumbai (Origin)", role: "ORIGIN_NODE", location: "Mumbai, IN", color: "#f59e0b" },
+      { pubkey: "02" + "01".repeat(32), alias: "Kinetix Plant Mumbai (Origin)", role: "ORIGIN_NODE", location: "Mumbai, IN", color: "#f59e0b" },
       { pubkey: "03" + "02".repeat(32), alias: "Routing Hub Alpha", role: "TRANSIT_ROUTER", location: "Frankfurt, DE", color: "#3b82f6" },
       { pubkey: "02" + "03".repeat(32), alias: "Transit Gateway Beta", role: "TRANSIT_ROUTER", location: "Singapore, SG", color: "#8b5cf6" },
       { pubkey: "03" + "04".repeat(32), alias: "Apex Diagnostics (Vendor)", role: "VENDOR_DESTINATION", location: "Zurich, CH", color: "#10b981" },
@@ -2384,7 +2384,7 @@ export async function calculateMultiHopRoute(payload: {
     total_fee_ppm: 75,
     final_amount_sats: amt + 2,
     path_nodes: [
-      { pubkey: "02" + "01".repeat(32), alias: "AuRAG Plant Mumbai (Origin)", role: "ORIGIN_NODE", location: "Mumbai, IN" },
+      { pubkey: "02" + "01".repeat(32), alias: "Kinetix Plant Mumbai (Origin)", role: "ORIGIN_NODE", location: "Mumbai, IN" },
       { pubkey: "03" + "02".repeat(32), alias: "Routing Hub Alpha", role: "TRANSIT_ROUTER", location: "Frankfurt, DE" },
       { pubkey: "03" + "04".repeat(32), alias: "Apex Diagnostics (Vendor)", role: "VENDOR_DESTINATION", location: "Zurich, CH" },
     ],
@@ -2392,7 +2392,7 @@ export async function calculateMultiHopRoute(payload: {
       {
         hop_index: 0,
         from_node: "02" + "01".repeat(32),
-        from_alias: "AuRAG Plant Mumbai (Origin)",
+        from_alias: "Kinetix Plant Mumbai (Origin)",
         to_node: "03" + "02".repeat(32),
         to_alias: "Routing Hub Alpha",
         channel_id: "CH-MUM-FRA-01",
@@ -2440,10 +2440,10 @@ export async function calculateMultiHopRoute(payload: {
       payment_preimage: preimage,
       sha256_invariant_verified: true,
       steps: [
-        { step: 1, phase: "FORWARD_HTLC", from: "AuRAG Plant Mumbai", to: "Routing Hub Alpha", action: "Offer HTLC (252 sats, Lock: Hash)", cltv_expiry: 840040, amount_sats: 252, evidence: "HTLC #1 Offered" },
+        { step: 1, phase: "FORWARD_HTLC", from: "Kinetix Plant Mumbai", to: "Routing Hub Alpha", action: "Offer HTLC (252 sats, Lock: Hash)", cltv_expiry: 840040, amount_sats: 252, evidence: "HTLC #1 Offered" },
         { step: 2, phase: "FORWARD_HTLC", from: "Routing Hub Alpha", to: "Apex Diagnostics", action: "Forward HTLC (250 sats, Lock: Hash)", cltv_expiry: 840000, amount_sats: 250, evidence: "HTLC #2 Offered" },
         { step: 3, phase: "BACKWARD_SETTLE", from: "Apex Diagnostics", to: "Routing Hub Alpha", action: "Fulfill HTLC with Preimage", cltv_expiry: 840000, amount_sats: 250, evidence: "Preimage Revealed" },
-        { step: 4, phase: "BACKWARD_SETTLE", from: "Routing Hub Alpha", to: "AuRAG Plant Mumbai", action: "Settle HTLC with Preimage", cltv_expiry: 840040, amount_sats: 252, evidence: "Settlement Confirmed" },
+        { step: 4, phase: "BACKWARD_SETTLE", from: "Routing Hub Alpha", to: "Kinetix Plant Mumbai", action: "Settle HTLC with Preimage", cltv_expiry: 840040, amount_sats: 252, evidence: "Settlement Confirmed" },
       ],
     },
   };

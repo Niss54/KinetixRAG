@@ -1,8 +1,8 @@
-# AuRAG Enterprise Architecture Specification
+# KinetixRAG Enterprise Architecture Specification
 
 ## 1. Executive Architecture Summary
 
-**AuRAG** is an enterprise-grade, single-plant industrial operations and intelligence platform designed for high-hazard process manufacturing facilities (refineries, petrochemical complexes, and power plants). It unifies heterogeneous plant data silos—SAP Plant Maintenance (PM), OSIsoft PI Historian time-series streams, Microsoft 365 SharePoint engineering SOPs, and Quality Management Systems (QMS)—into a grounded, deterministic multi-agent GraphRAG reasoning engine.
+**KinetixRAG** is an enterprise-grade, single-plant industrial operations and intelligence platform designed for high-hazard process manufacturing facilities (refineries, petrochemical complexes, and power plants). It unifies heterogeneous plant data silos—SAP Plant Maintenance (PM), OSIsoft PI Historian time-series streams, Microsoft 365 SharePoint engineering SOPs, and Quality Management Systems (QMS)—into a grounded, deterministic multi-agent GraphRAG reasoning engine.
 
 The production deployment boundary is hosted in **AWS Mumbai (`ap-south-1`)** to comply with Indian data residency mandates, process safety guidelines (OSHA 1910.119 / OISD-156), and statutory regulations (The Factories Act 1948, PESO SMPV Rules).
 
