@@ -57,3 +57,15 @@ dot.md
 video_storyboard_timeline.md
 video_voiceover_script.md
 
+# Machine Learning Artifacts & Checkpoints
+*.pt
+*.pth
+*.ckpt
+*.onnx
+ml/graph_risk/checkpoints/
+ml/graph_risk/data/
+ml/graph_risk/artifacts/
+ml/graph_risk/reports/*.png
+ml/graph_risk/reports/*.pdf
+
+
