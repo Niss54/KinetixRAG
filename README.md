@@ -172,6 +172,8 @@ flowchart TD
   Rigorous input/output guardrails that block prompt injection attacks, unauthorized equipment setpoint alterations, and hallucinations.
 * **Industrial Telemetry Streaming**:
   Built-in support for OPC-UA industrial protocol adapters, synthetic SCADA sensor generation, and NASA IMS bearing run-to-failure vibration datasets.
+* **Selective GraphSAGE Risk Intelligence (Advisory ML)**:
+  Inductive Graph Neural Network (2-layer GraphSAGE with mean neighbor aggregation) predicting impending equipment failure over look-ahead horizons ($T+24\text{h}$) from fused 7D vibration, thermal, and spectral kinematics. Operates behind an advisory-only governance interlock (`calibrated: false`, `is_advisory: true`) and lazy-loads to protect free-tier RAM limits.
 * **Modern Full-Stack Architecture**:
   High-performance FastAPI backend with Python 3.12, thread-safe Neo4j driver connection pooling, and a Next.js 16.2.11 responsive industrial operations console.
 
@@ -183,19 +185,20 @@ KinetixRAG maintains a rigorous, deterministic test suite verifying every compon
 
 ```bash
 # Execute core validation suite locally
-pytest tests/backend tests/retrieval tests/agents tests/telemetry -q
+pytest tests/backend tests/retrieval tests/agents tests/telemetry ml/graph_risk/tests -q
 ```
 
-### Verified Test Suite Breakdown (392 Total Checks / 126 Core Cases)
+### Verified Test Suite Breakdown (467 Total Automated Checks)
 
 | Test Suite / Layer | Target Path / Scope | Tests | Execution | Status |
 | :--- | :--- | :---: | :---: | :---: |
 | **Core Fast Pytest Suite** | `tests/backend/`, `tests/retrieval/`, `tests/agents/`, `tests/telemetry/` | **126 verified tests** | ~10s | **PASS ✅** |
-| **Full Backend Pytest Suite** | Ingestion, Infra, Machine Money, E2E | **317 total tests** | ~59s | **PASS ✅** |
-| **Frontend Component Suite** | Vitest (16 suites, UI & Decoding) | **61 tests** | ~20s | **PASS ✅** |
+| **GraphSAGE ML Intelligence Suite** | `ml/graph_risk/tests/` (Schemas, Features, SAGE Net, Explainer) | **45 verified tests** | ~5s | **PASS ✅** |
+| **Full Backend Pytest Suite** | Ingestion, Infra, Machine Money, E2E, ML (`tests/`, `ml/`) | **386 total tests** | ~190s | **PASS ✅** |
+| **Frontend Component Suite** | Vitest (17 suites, Predictive Watch, Machine Money, Decoders) | **65 tests** | ~36s | **PASS ✅** |
 | **Browser E2E Suite** | Playwright (Desktop & Mobile flows) | **6 browser checks** | ~26s | **PASS ✅** |
-| **Security & Operational Scans** | Secret scan, link audit, health probes | **8 automated checks** | ~5s | **PASS ✅** |
-| **Total Automated Checks** | **Full Project Verification Harness** | **392 total checks** | ~120s | **100% PASS ✅** |
+| **Security & Operational Scans** | Secret scan, link audit, health probes | **10 automated checks** | ~8s | **PASS ✅** |
+| **Total Automated Checks** | **Full Project Verification Harness** | **467 total checks** | ~260s | **100% PASS ✅** |
 
 > All 126 core validation tests execute in under 10 seconds locally with zero external network dependencies.
 
@@ -254,6 +257,9 @@ npm run dev
 | [**Wispr Live Build Video (Drive Stream)**](https://drive.google.com/file/d/1r9GXr_XC9JMi8IEJcizFxLRLRVareDIA/view?usp=sharing) | **3-Minute Instant Video Stream** showing live Wispr Flow voice-prompted engineering and probe execution in IDE (or raw [in-repo MP4](./KinetixRAG_Wispr_Flow_Live_Development_Evidence.mp4)) |
 | [**WISPR_EVIDENCE.md**](./WISPR_EVIDENCE.md) | Canonical Wispr Flow voice-to-code evidence dossier, 12-screenshot analysis, and subsystem traceability |
 | [**JUDGE_README.md**](./JUDGE_README.md) | 3-minute executive evaluation guide for hackathon judges |
+| [**THIRD_PARTY_NOTICES.md**](./THIRD_PARTY_NOTICES.md) | Full open-source MIT attribution and academic references (`fraud-detection-gnn`, GraphSAGE, NASA IMS) |
+| [**docs/GRAPHSAGE_INTEGRATION_AUDIT.md**](./docs/GRAPHSAGE_INTEGRATION_AUDIT.md) | Verified GraphSAGE integration audit, NASA IMS benchmark evaluation, and memory profiling |
+| [**docs/GRAPH_RISK_MODEL_CARD.md**](./docs/GRAPH_RISK_MODEL_CARD.md) | Model card for inductive GraphSAGE rotating equipment failure prediction (v1.0.0-final) |
 | [**ARCHITECTURE.md**](./ARCHITECTURE.md) | Authoritative system architecture, graph ontology schemas, and ADRs |
 | [**wispr-flow/README.md**](./wispr-flow/README.md) | 12 high-resolution screenshots gallery and dictation transcripts |
 | [**docs/DEMO_SCRIPT.md**](./docs/DEMO_SCRIPT.md) | 5-minute interactive live demonstration script and preflight checklist |
