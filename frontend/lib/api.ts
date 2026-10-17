@@ -2449,6 +2449,84 @@ export async function calculateMultiHopRoute(payload: {
   };
 }
 
+// ============================================================================
+// GraphSAGE Risk Intelligence API Contract (PRD Phase 6 & 7)
+// ============================================================================
+
+export interface GraphRiskStatusResponse {
+  status: "available" | "disabled" | "model_not_trained" | "incompatible_features" | "inference_error";
+  model_available: boolean;
+  model_version?: string | null;
+  schema_version: string;
+  architecture?: string;
+  val_pr_auc?: number | null;
+  feature_flag_enabled: boolean;
+  feature_names: string[];
+  feature_dim: number;
+  detail?: string;
+}
+
+export interface GraphRiskExplanationItem {
+  node_id: string;
+  entity_type: string;
+  influence_score: number;
+  timestamp: string;
+  dominant_feature?: string;
+}
+
+export interface GraphRiskExplanation {
+  status: "available" | "isolated_node" | "insufficient_neighborhood" | "timeout";
+  hops_analyzed: number;
+  influential_nodes: GraphRiskExplanationItem[];
+  caveat: string;
+}
+
+export interface GraphRiskPredictRequest {
+  sample_id: string;
+  equipment_id: string;
+  features: number[];
+  explain?: boolean;
+  deterministic_risk?: number | null;
+}
+
+export interface GraphRiskPredictResponse {
+  sample_id: string;
+  equipment_id: string;
+  timestamp: string;
+  status: "available" | "disabled" | "model_not_trained" | "incompatible_features" | "inference_error";
+  advisory_risk_score?: number | null;
+  calibrated: boolean;
+  is_advisory: boolean;
+  deterministic_risk_score?: number | null;
+  model_version?: string;
+  schema_version?: string;
+  explanation?: GraphRiskExplanation | null;
+  limitations?: string;
+}
+
+export async function getGraphRiskStatus(): Promise<GraphRiskStatusResponse> {
+  const res = await fetch(`${API_URL}/api/graph-risk/status`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to load Graph Risk model status.");
+  return res.json();
+}
+
+export async function predictGraphRisk(
+  payload: GraphRiskPredictRequest
+): Promise<GraphRiskPredictResponse> {
+  const res = await fetch(`${API_URL}/api/graph-risk/predict`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+    cache: "no-store",
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.detail?.detail || err.detail || "Graph Risk prediction request failed.");
+  }
+  return res.json();
+}
+
+
 
 
 
