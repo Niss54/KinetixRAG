@@ -34,6 +34,7 @@ from backend.app.api import (
     work_orders,
     machine_money,
     vendors,
+    graph_risk,
 )
 from backend.app.db.database import init_db
 
@@ -130,6 +131,8 @@ app.include_router(machine_money.router, prefix="/api")
 app.include_router(machine_money.router, prefix="/api/v1")
 app.include_router(vendors.router, prefix="/api")
 app.include_router(vendors.router, prefix="/api/v1")
+app.include_router(graph_risk.router, prefix="/api")
+
 
 
 # On Render free tier (512MB RAM), pre-warming torch and sentence_transformers
