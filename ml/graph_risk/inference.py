@@ -93,6 +93,7 @@ class GraphRiskInferenceEngine:
         graph: Optional[IndustrialGraph] = None,
         deterministic_risk: Optional[float] = None,
         timestamp: Optional[str] = None,
+        explain: bool = False,
     ) -> AdvisoryPrediction:
         """Score an observation or graph node, returning standardized AdvisoryPrediction."""
         ts = timestamp or datetime.now(timezone.utc).isoformat()
@@ -134,6 +135,7 @@ class GraphRiskInferenceEngine:
             )
 
         try:
+            explanation = None
             if graph is not None:
                 # Predict over provided graph topology
                 scores = self.model.forward(graph.features, graph.edge_index, graph.edge_weights)
@@ -142,6 +144,14 @@ class GraphRiskInferenceEngine:
                     risk_score = float(scores[target_idx])
                 else:
                     risk_score = float(scores[-1])
+
+                if explain:
+                    try:
+                        from ml.graph_risk.explain import GraphRiskExplainer
+                        explainer = GraphRiskExplainer(self.model)
+                        explanation = explainer.explain_node(graph, sample_id)
+                    except Exception:
+                        explanation = None
             else:
                 # Isolated node inference (empty edges)
                 X = feat_arr.reshape(1, -1)
@@ -160,6 +170,7 @@ class GraphRiskInferenceEngine:
                 deterministic_risk_score=deterministic_risk,
                 model_version=self.metadata.model_version if self.metadata else "1.0.0",
                 schema_version=SCHEMA_VERSION,
+                explanation=explanation,
             )
         except Exception as exc:
             return AdvisoryPrediction(

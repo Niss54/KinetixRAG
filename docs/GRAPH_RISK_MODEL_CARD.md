@@ -72,9 +72,15 @@ Ordered feature vector of dimension $D = 7$:
 
 ## 5. Explainability & Provenance Constraints
 
-- **Methodology:** Bounded $k$-hop subgraph extraction ($k = 2$) and node influence attribution.
-- **Safety Semantics:** Influence weights represent statistical model attribution only, not physical causation.
-- **Degradation:** If explainability calculation times out or fails, the API safely returns `status: "timeout"` without interrupting predictive operations.
+- **Methodology:** Bounded $k$-hop causal subgraph extraction ($k \le 2$) via `GraphRiskExplainer`.
+- **Attribution Mechanism:** Deterministic leave-one-out counterfactual feature perturbation. For each preceding node $u$ in the $k$-hop neighborhood, its contribution is measured by the score deviation $\Delta \text{score}_u = |\text{score}_{\text{full}} - \text{score}_{\text{without\_}u}|$, normalized across all predecessors.
+- **Dominant Feature Attribution:** Identifies the specific sensor channel (e.g. `vibration_rms_mm_s`, `bearing_temp_c`) with the greatest amplitude deviation on each contributing node.
+- **Safety Semantics & Disclosures:**
+  - Mandatory disclaimer returned with every payload: *"Explanation reflects graph model attribution only; does not prove physical causation."*
+  - Node IDs returned are strictly mapped to verified existing telemetry observations; no synthetic or unmapped entities are ever fabricated.
+- **Degraded Operation:**
+  - Isolated nodes gracefully return `status: "isolated_node"` with an empty predecessor list.
+  - Subgraph extraction or timeout exceptions safely degrade to `status: "insufficient_neighborhood"` or `None` without interrupting core risk scoring or taking down the API service.
 
 ---
 
